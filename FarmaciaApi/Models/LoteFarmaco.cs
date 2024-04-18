@@ -15,10 +15,10 @@ namespace FarmaciaApi.Models
         public int Cantidad { get; set; }
 
         [ForeignKey("IdPresentacion")]
-        public Presentacion Presentacion { get; set; }
+        //public Presentacion Presentacion { get; set; }
         public int IdPresentacion { get; set; }
 
-        public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
+        //public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
 
     }
 }

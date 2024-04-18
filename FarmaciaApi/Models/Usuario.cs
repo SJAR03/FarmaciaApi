@@ -15,7 +15,7 @@ namespace FarmaciaApi.Models
         public string Pwd { get; set; }
         public int Estado { get; set; }
 
-        public ICollection<UsuarioRol> UsuarioRols { get; set; }
+        //public ICollection<UsuarioRol> UsuarioRols { get; set; }
 
     }
 }

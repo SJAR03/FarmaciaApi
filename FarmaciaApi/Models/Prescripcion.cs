@@ -16,9 +16,9 @@ namespace FarmaciaApi.Models
         public string Instrucciones { get; set; }
 
         [ForeignKey("IdExpediente")]
-        public Expediente Expediente { get; set; }
+        //public Expediente Expediente { get; set; }
         public int IdExpediente { get; set; }
 
-        public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
+        //public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
     }
 }

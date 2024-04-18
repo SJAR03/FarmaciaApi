@@ -22,6 +22,6 @@ namespace FarmaciaApi.Models
         public string Correo { get; set; }
         public int Estado { get; set; }
 
-        public Expediente Expediente { get; set; }
+        //public Expediente Expediente { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace FarmaciaApi.Models
         public int Estado { get; set; }
 
         [ForeignKey("IdPaciente")]
-        public Paciente Paciente { get; set; }
+        //public Paciente Paciente { get; set; }
         public int IdPaciente { get; set; }
 
-        public ICollection<Prescripcion> Prescripciones { get; set; }
+        //public ICollection<Prescripcion> Prescripciones { get; set; }
     }
 }

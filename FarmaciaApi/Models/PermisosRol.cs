@@ -9,11 +9,11 @@ namespace FarmaciaApi.Models
         public int IdPermisosRol { get; set; }
 
         [ForeignKey("IdPermisos")]
-        public Permisos Permisos { get; set; }
+        //public Permisos Permisos { get; set; }
         public int IdPermisos { get; set; }
 
         [ForeignKey("IdRol")]
-        public Rol Rol { get; set; }
+        //public Rol Rol { get; set; }
         public int IdRol { get; set; }
     }
 }
