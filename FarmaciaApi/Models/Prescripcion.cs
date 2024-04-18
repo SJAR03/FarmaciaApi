@@ -7,8 +7,6 @@ namespace FarmaciaApi.Models
     {
         [Key]
         public int IdPrescripcion { get; set; }
-        public int IdExpediente { get; set; }
-        public int IdPaciente { get; set; }
         public DateTime Fecha { get; set; }
         [Column(TypeName = "nvarchar(100)")]
         public string Dosis { get; set; }
@@ -17,7 +15,10 @@ namespace FarmaciaApi.Models
         [Column(TypeName = "nvarchar(200)")]
         public string Instrucciones { get; set; }
 
+        [ForeignKey("IdExpediente")]
         public Expediente Expediente { get; set; }
-        //public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
+        public int IdExpediente { get; set; }
+
+        public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
     }
 }

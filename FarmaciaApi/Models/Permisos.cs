@@ -13,6 +13,6 @@ namespace FarmaciaApi.Models
         public string Descripcion { get; set; }
         public int Estado { get; set; }
 
-        //public ICollection<PermisosRol> PermisosRoles { get; set; }
+        public ICollection<PermisosRol> PermisosRols { get; set; }
     }
 }

@@ -7,16 +7,15 @@ namespace FarmaciaApi.Models
     {
         [Key]
         public int IdPrescripcionDetalle { get; set; }
-        public int IdLoteFarmaco { get; set; }
-        public int IdPresentacion { get; set; }
-        public int IdMedidas { get; set; }
-        public int IdDosificacion { get; set; }
-        public int IdPrescripcion { get; set; }
-        public int IdExpediente { get; set; }
-        public int IdPaciente { get; set; }
         public int Cantidad { get; set; }
 
+        [ForeignKey("IdLoteFarmaco")]
         public LoteFarmaco LoteFarmaco { get; set; }
+        public int IdLoteFarmaco { get; set; }
+
+        [ForeignKey("IdPrescripcion")]
         public Prescripcion Prescripcion { get; set; }
+        public int IdPrescripcion { get; set; }
+
     }
 }

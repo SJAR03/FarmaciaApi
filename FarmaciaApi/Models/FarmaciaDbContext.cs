@@ -24,30 +24,62 @@ namespace FarmaciaApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Expediente>().HasKey(e => new { e.IdExpediente, e.IdPaciente });
-            //modelBuilder.Entity<Expediente>().HasOne(e => e.Paciente).WithMany(p => p.Expedientes).HasForeignKey(e => e.IdPaciente);
-            //modelBuilder.Entity<Expediente>().HasOne(e => e.Usuario).WithMany(u => u.Expedientes).HasForeignKey(e => e.IdUsuario);
 
-            modelBuilder.Entity<LoteFarmaco>().HasKey(lf => new { lf.IdLoteFarmaco, lf.IdPresentacion, lf.IdMedidas, lf.IdDosificacion });
+            modelBuilder.Entity<Expediente>()
+                .HasOne(e => e.Paciente)
+                .WithOne(p => p.Expediente)
+                .HasForeignKey<Expediente>(e => e.IdPaciente);
 
-            modelBuilder.Entity<PermisosRol>().HasKey(pr => new { pr.IdPermisos, pr.IdRol });
-            //modelBuilder.Entity<PermisosRol>().HasOne(pr => pr.Permisos).WithMany(p => p.PermisosRoles).HasForeignKey(pr => pr.IdPermisos);
-            //modelBuilder.Entity<PermisosRol>().HasOne(pr => pr.Rol).WithMany(r => r.PermisosRoles).HasForeignKey(pr => pr.IdRol);
+            modelBuilder.Entity<Expediente>()
+                .HasMany(e => e.Prescripciones)
+                .WithOne(p => p.Expediente)
+                .HasForeignKey(p => p.IdPrescripcion);
 
-            modelBuilder.Entity<Prescripcion>().HasKey(p => new { p.IdPrescripcion, p.IdExpediente, p.IdPaciente });
-            //modelBuilder.Entity<Prescripcion>().HasOne(p => p.Expediente).WithMany(e => e.Prescripciones).HasForeignKey(p => new { p.IdExpediente, p.IdPaciente });
+            modelBuilder.Entity<Prescripcion>()
+                .HasMany(p => p.PrescripcionDetalles)
+                .WithOne(pd => pd.Prescripcion)
+                .HasForeignKey(pd => pd.IdPrescripcionDetalle);
 
-            modelBuilder.Entity<PrescripcionDetalle>().HasKey(pd => new { pd.IdPrescripcionDetalle, pd.IdLoteFarmaco, pd.IdPresentacion, pd.IdMedidas, pd.IdDosificacion, pd.IdPrescripcion, pd.IdExpediente, pd.IdPaciente });
-            //modelBuilder.Entity<PrescripcionDetalle>().HasOne(pd => pd.LoteFarmaco).WithMany(lf => lf.PrescripcionDetalles).HasForeignKey(pd => new { pd.IdLoteFarmaco, pd.IdPresentacion, pd.IdMedidas, pd.IdDosificacion });
-            //modelBuilder.Entity<PrescripcionDetalle>().HasOne(pd => pd.Prescripcion).WithMany(p => p.PrescripcionDetalles).HasForeignKey(pd => new { pd.IdPrescripcion, pd.IdExpediente, pd.IdPaciente });
+            modelBuilder.Entity<LoteFarmaco>()
+                .HasMany(pd => pd.PrescripcionDetalles)
+                .WithOne(p => p.LoteFarmaco)
+                .HasForeignKey(pd => pd.IdPrescripcionDetalle);
 
-            modelBuilder.Entity<Presentacion>().HasKey(p => new { p.IdPresentacion, p.IdMedidas, p.IdDosificacion });
-            //modelBuilder.Entity<Presentacion>().HasOne(p => p.Medidas).WithMany(m => m.Presentaciones).HasForeignKey(p => p.IdMedidas);
-            //modelBuilder.Entity<Presentacion>().HasOne(p => p.Dosificacion).WithMany(d => d.Presentaciones).HasForeignKey(p => p.IdDosificacion);
+            modelBuilder.Entity<Presentacion>()
+                .HasMany(p => p.LoteFarmacos)
+                .WithOne(l => l.Presentacion)
+                .HasForeignKey(p => p.IdLoteFarmaco);
 
-            modelBuilder.Entity<UsuarioRol>().HasKey(ur => new { ur.IdUsuario, ur.IdRol });
-            //modelBuilder.Entity<UsuarioRol>().HasOne(ur => ur.Usuario).WithMany(u => u.UsuarioRoles).HasForeignKey(ur => ur.IdUsuario);
-            //modelBuilder.Entity<UsuarioRol>().HasOne(ur => ur.Rol).WithMany(r => r.UsuarioRoles).HasForeignKey(ur => ur.IdRol);
+            modelBuilder.Entity<Presentacion>()
+                .HasOne(p => p.Medidas)
+                .WithMany(m => m.Presentaciones)
+                .HasForeignKey(p => p.IdMedidas);
+
+            modelBuilder.Entity<Presentacion>()
+                .HasOne(p => p.Dosificacion)
+                .WithMany(d => d.Presentaciones)
+                .HasForeignKey(p => p.IdDosificacion);
+
+            modelBuilder.Entity<Rol>()
+                .HasMany(r => r.UsuarioRols)
+                .WithOne(u => u.Rol)
+                .HasForeignKey(u => u.IdUsuarioRol);
+
+            modelBuilder.Entity<Rol>()
+                .HasMany(r => r.permisosRols)
+                .WithOne(pr => pr.Rol)
+                .HasForeignKey(pr => pr.IdPermisosRol);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(u => u.UsuarioRols)
+                .WithOne(ur => ur.Usuario)
+                .HasForeignKey(ur => ur.IdUsuarioRol);
+
+            modelBuilder.Entity<Permisos>()
+                .HasMany(p => p.PermisosRols)
+                .WithOne(pr => pr.Permisos)
+                .HasForeignKey(pr => pr.IdPermisosRol);
+
         }
 
     }

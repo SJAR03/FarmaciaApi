@@ -7,10 +7,13 @@ namespace FarmaciaApi.Models
     {
         [Key]
         public int IdPermisosRol { get; set; }
-        public int IdPermisos { get; set; }
-        public int IdRol { get; set; }
 
+        [ForeignKey("IdPermisos")]
         public Permisos Permisos { get; set; }
+        public int IdPermisos { get; set; }
+
+        [ForeignKey("IdRol")]
         public Rol Rol { get; set; }
+        public int IdRol { get; set; }
     }
 }

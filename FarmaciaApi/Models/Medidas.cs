@@ -10,6 +10,6 @@ namespace FarmaciaApi.Models
         [Column(TypeName = "nvarchar(50)")]
         public string Nombre { get; set; }
 
-        //public ICollection<Presentacion> Presentaciones { get; set; }
+        public ICollection<Presentacion> Presentaciones { get; set; }
     }
 }

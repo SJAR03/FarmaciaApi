@@ -42,10 +42,10 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Expediente", b =>
                 {
                     b.Property<int>("IdExpediente")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("IdPaciente")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdExpediente"));
 
                     b.Property<int>("Estado")
                         .HasColumnType("int");
@@ -53,13 +53,17 @@ namespace FarmaciaApi.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdPaciente")
+                        .HasColumnType("int");
+
                     b.Property<string>("Notas")
                         .IsRequired()
                         .HasColumnType("nvarchar(150)");
 
-                    b.HasKey("IdExpediente", "IdPaciente");
+                    b.HasKey("IdExpediente");
 
-                    b.HasIndex("IdPaciente");
+                    b.HasIndex("IdPaciente")
+                        .IsUnique();
 
                     b.ToTable("Expedientes");
                 });
@@ -67,15 +71,6 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
                 {
                     b.Property<int>("IdLoteFarmaco")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPresentacion")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMedidas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdDosificacion")
                         .HasColumnType("int");
 
                     b.Property<int>("Cantidad")
@@ -88,13 +83,14 @@ namespace FarmaciaApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("IdPresentacion")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(80)");
 
-                    b.HasKey("IdLoteFarmaco", "IdPresentacion", "IdMedidas", "IdDosificacion");
-
-                    b.HasIndex("IdPresentacion", "IdMedidas", "IdDosificacion");
+                    b.HasKey("IdLoteFarmaco");
 
                     b.ToTable("LoteFarmacos");
                 });
@@ -185,18 +181,16 @@ namespace FarmaciaApi.Migrations
 
             modelBuilder.Entity("FarmaciaApi.Models.PermisosRol", b =>
                 {
+                    b.Property<int>("IdPermisosRol")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdPermisos")
                         .HasColumnType("int");
 
                     b.Property<int>("IdRol")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdPermisosRol")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdPermisos", "IdRol");
-
-                    b.HasIndex("IdRol");
+                    b.HasKey("IdPermisosRol");
 
                     b.ToTable("PermisosRoles");
                 });
@@ -204,12 +198,6 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Prescripcion", b =>
                 {
                     b.Property<int>("IdPrescripcion")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdExpediente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPaciente")
                         .HasColumnType("int");
 
                     b.Property<string>("Dosis")
@@ -223,13 +211,14 @@ namespace FarmaciaApi.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdExpediente")
+                        .HasColumnType("int");
+
                     b.Property<string>("Instrucciones")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("IdPrescripcion", "IdExpediente", "IdPaciente");
-
-                    b.HasIndex("IdExpediente", "IdPaciente");
+                    b.HasKey("IdPrescripcion");
 
                     b.ToTable("Prescripciones");
                 });
@@ -239,35 +228,16 @@ namespace FarmaciaApi.Migrations
                     b.Property<int>("IdPrescripcionDetalle")
                         .HasColumnType("int");
 
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdLoteFarmaco")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPresentacion")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMedidas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdDosificacion")
                         .HasColumnType("int");
 
                     b.Property<int>("IdPrescripcion")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdExpediente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPaciente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdPrescripcionDetalle", "IdLoteFarmaco", "IdPresentacion", "IdMedidas", "IdDosificacion", "IdPrescripcion", "IdExpediente", "IdPaciente");
-
-                    b.HasIndex("IdPrescripcion", "IdExpediente", "IdPaciente");
-
-                    b.HasIndex("IdLoteFarmaco", "IdPresentacion", "IdMedidas", "IdDosificacion");
+                    b.HasKey("IdPrescripcionDetalle");
 
                     b.ToTable("PrescripcionDetalles");
                 });
@@ -275,23 +245,26 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Presentacion", b =>
                 {
                     b.Property<int>("IdPresentacion")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("IdMedidas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdDosificacion")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPresentacion"));
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("IdDosificacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdMedidas")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("IdPresentacion", "IdMedidas", "IdDosificacion");
+                    b.HasKey("IdPresentacion");
 
                     b.HasIndex("IdDosificacion");
 
@@ -343,7 +316,7 @@ namespace FarmaciaApi.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(15)");
 
-                    b.Property<string>("User")
+                    b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("varchar(25)");
 
@@ -354,18 +327,16 @@ namespace FarmaciaApi.Migrations
 
             modelBuilder.Entity("FarmaciaApi.Models.UsuarioRol", b =>
                 {
-                    b.Property<int>("IdUsuario")
+                    b.Property<int>("IdUsuarioRol")
                         .HasColumnType("int");
 
                     b.Property<int>("IdRol")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUsuarioRol")
+                    b.Property<int>("IdUsuario")
                         .HasColumnType("int");
 
-                    b.HasKey("IdUsuario", "IdRol");
-
-                    b.HasIndex("IdRol");
+                    b.HasKey("IdUsuarioRol");
 
                     b.ToTable("UsuarioRoles");
                 });
@@ -373,8 +344,8 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Expediente", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("IdPaciente")
+                        .WithOne("Expediente")
+                        .HasForeignKey("FarmaciaApi.Models.Expediente", "IdPaciente")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -384,8 +355,8 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Presentacion", "Presentacion")
-                        .WithMany()
-                        .HasForeignKey("IdPresentacion", "IdMedidas", "IdDosificacion")
+                        .WithMany("LoteFarmacos")
+                        .HasForeignKey("IdLoteFarmaco")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -395,14 +366,14 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.PermisosRol", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Permisos", "Permisos")
-                        .WithMany()
-                        .HasForeignKey("IdPermisos")
+                        .WithMany("PermisosRols")
+                        .HasForeignKey("IdPermisosRol")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FarmaciaApi.Models.Rol", "Rol")
-                        .WithMany()
-                        .HasForeignKey("IdRol")
+                        .WithMany("permisosRols")
+                        .HasForeignKey("IdPermisosRol")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -414,8 +385,8 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Prescripcion", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Expediente", "Expediente")
-                        .WithMany()
-                        .HasForeignKey("IdExpediente", "IdPaciente")
+                        .WithMany("Prescripciones")
+                        .HasForeignKey("IdPrescripcion")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -424,15 +395,15 @@ namespace FarmaciaApi.Migrations
 
             modelBuilder.Entity("FarmaciaApi.Models.PrescripcionDetalle", b =>
                 {
-                    b.HasOne("FarmaciaApi.Models.Prescripcion", "Prescripcion")
-                        .WithMany()
-                        .HasForeignKey("IdPrescripcion", "IdExpediente", "IdPaciente")
+                    b.HasOne("FarmaciaApi.Models.LoteFarmaco", "LoteFarmaco")
+                        .WithMany("PrescripcionDetalles")
+                        .HasForeignKey("IdPrescripcionDetalle")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FarmaciaApi.Models.LoteFarmaco", "LoteFarmaco")
-                        .WithMany()
-                        .HasForeignKey("IdLoteFarmaco", "IdPresentacion", "IdMedidas", "IdDosificacion")
+                    b.HasOne("FarmaciaApi.Models.Prescripcion", "Prescripcion")
+                        .WithMany("PrescripcionDetalles")
+                        .HasForeignKey("IdPrescripcionDetalle")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -444,13 +415,13 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.Presentacion", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Dosificacion", "Dosificacion")
-                        .WithMany()
+                        .WithMany("Presentaciones")
                         .HasForeignKey("IdDosificacion")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FarmaciaApi.Models.Medidas", "Medidas")
-                        .WithMany()
+                        .WithMany("Presentaciones")
                         .HasForeignKey("IdMedidas")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -463,20 +434,73 @@ namespace FarmaciaApi.Migrations
             modelBuilder.Entity("FarmaciaApi.Models.UsuarioRol", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Rol", "Rol")
-                        .WithMany()
-                        .HasForeignKey("IdRol")
+                        .WithMany("UsuarioRols")
+                        .HasForeignKey("IdUsuarioRol")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FarmaciaApi.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("IdUsuario")
+                        .WithMany("UsuarioRols")
+                        .HasForeignKey("IdUsuarioRol")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Rol");
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Dosificacion", b =>
+                {
+                    b.Navigation("Presentaciones");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Expediente", b =>
+                {
+                    b.Navigation("Prescripciones");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
+                {
+                    b.Navigation("PrescripcionDetalles");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Medidas", b =>
+                {
+                    b.Navigation("Presentaciones");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Paciente", b =>
+                {
+                    b.Navigation("Expediente")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Permisos", b =>
+                {
+                    b.Navigation("PermisosRols");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Prescripcion", b =>
+                {
+                    b.Navigation("PrescripcionDetalles");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Presentacion", b =>
+                {
+                    b.Navigation("LoteFarmacos");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Rol", b =>
+                {
+                    b.Navigation("UsuarioRols");
+
+                    b.Navigation("permisosRols");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.Usuario", b =>
+                {
+                    b.Navigation("UsuarioRols");
                 });
 #pragma warning restore 612, 618
         }

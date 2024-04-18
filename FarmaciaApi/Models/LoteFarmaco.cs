@@ -7,9 +7,6 @@ namespace FarmaciaApi.Models
     {
         [Key]
         public int IdLoteFarmaco { get; set; }
-        public int IdPresentacion { get; set; }
-        public int IdMedidas { get; set; }
-        public int IdDosificacion { get; set; }
         [Column(TypeName = "nvarchar(80)")]
         public string Nombre { get; set; }
         [Column(TypeName = "nvarchar(150)")]
@@ -17,8 +14,11 @@ namespace FarmaciaApi.Models
         public int Concentracion { get; set; }
         public int Cantidad { get; set; }
 
+        [ForeignKey("IdPresentacion")]
         public Presentacion Presentacion { get; set; }
+        public int IdPresentacion { get; set; }
 
-        //public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
+        public ICollection<PrescripcionDetalle> PrescripcionDetalles { get; set; }
+
     }
 }
