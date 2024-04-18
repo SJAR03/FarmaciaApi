@@ -11,47 +11,47 @@ namespace FarmaciaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DosificacionsController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private readonly FarmaciaDbContext _context;
 
-        public DosificacionsController(FarmaciaDbContext context)
+        public UsuariosController(FarmaciaDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Dosificacions
+        // GET: api/Usuarios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Dosificacion>>> GetDosificaciones()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
-            return await _context.Dosificaciones.ToListAsync();
+            return await _context.Usuarios.ToListAsync();
         }
 
-        // GET: api/Dosificacions/5
+        // GET: api/Usuarios/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Dosificacion>> GetDosificacion(int id)
+        public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
-            var dosificacion = await _context.Dosificaciones.FindAsync(id);
+            var usuario = await _context.Usuarios.FindAsync(id);
 
-            if (dosificacion == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return dosificacion;
+            return usuario;
         }
 
-        // PUT: api/Dosificacions/5
+        // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDosificacion(int id, Dosificacion dosificacion)
+        public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
-            if (id != dosificacion.IdDosificacion)
+            if (id != usuario.IdUsuario)
             {
                 return BadRequest();
             }
 
-            _context.Entry(dosificacion).State = EntityState.Modified;
+            _context.Entry(usuario).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace FarmaciaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!DosificacionExists(id))
+                if (!UsuarioExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Dosificacions
+        // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Dosificacion>> PostDosificacion(Dosificacion dosificacion)
+        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
-            _context.Dosificaciones.Add(dosificacion);
+            _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDosificacion", new { id = dosificacion.IdDosificacion }, dosificacion);
+            return CreatedAtAction("GetUsuario", new { id = usuario.IdUsuario }, usuario);
         }
 
-        // DELETE: api/Dosificacions/5
+        // DELETE: api/Usuarios/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDosificacion(int id)
+        public async Task<IActionResult> DeleteUsuario(int id)
         {
-            var dosificacion = await _context.Dosificaciones.FindAsync(id);
-            if (dosificacion == null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            _context.Dosificaciones.Remove(dosificacion);
+            _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool DosificacionExists(int id)
+        private bool UsuarioExists(int id)
         {
-            return _context.Dosificaciones.Any(e => e.IdDosificacion == id);
+            return _context.Usuarios.Any(e => e.IdUsuario == id);
         }
     }
 }

@@ -11,47 +11,47 @@ namespace FarmaciaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PresentacionsController : ControllerBase
+    public class ExpedientesController : ControllerBase
     {
         private readonly FarmaciaDbContext _context;
 
-        public PresentacionsController(FarmaciaDbContext context)
+        public ExpedientesController(FarmaciaDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Presentacions
+        // GET: api/Expedientes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Presentacion>>> GetPresentaciones()
+        public async Task<ActionResult<IEnumerable<Expediente>>> GetExpedientes()
         {
-            return await _context.Presentaciones.ToListAsync();
+            return await _context.Expedientes.ToListAsync();
         }
 
-        // GET: api/Presentacions/5
+        // GET: api/Expedientes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
+        public async Task<ActionResult<Expediente>> GetExpediente(int id)
         {
-            var presentacion = await _context.Presentaciones.FindAsync(id);
+            var expediente = await _context.Expedientes.FindAsync(id);
 
-            if (presentacion == null)
+            if (expediente == null)
             {
                 return NotFound();
             }
 
-            return presentacion;
+            return expediente;
         }
 
-        // PUT: api/Presentacions/5
+        // PUT: api/Expedientes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPresentacion(int id, Presentacion presentacion)
+        public async Task<IActionResult> PutExpediente(int id, Expediente expediente)
         {
-            if (id != presentacion.IdPresentacion)
+            if (id != expediente.IdExpediente)
             {
                 return BadRequest();
             }
 
-            _context.Entry(presentacion).State = EntityState.Modified;
+            _context.Entry(expediente).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace FarmaciaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PresentacionExists(id))
+                if (!ExpedienteExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Presentacions
+        // POST: api/Expedientes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Presentacion>> PostPresentacion(Presentacion presentacion)
+        public async Task<ActionResult<Expediente>> PostExpediente(Expediente expediente)
         {
-            _context.Presentaciones.Add(presentacion);
+            _context.Expedientes.Add(expediente);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPresentacion", new { id = presentacion.IdPresentacion }, presentacion);
+            return CreatedAtAction("GetExpediente", new { id = expediente.IdExpediente }, expediente);
         }
 
-        // DELETE: api/Presentacions/5
+        // DELETE: api/Expedientes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePresentacion(int id)
+        public async Task<IActionResult> DeleteExpediente(int id)
         {
-            var presentacion = await _context.Presentaciones.FindAsync(id);
-            if (presentacion == null)
+            var expediente = await _context.Expedientes.FindAsync(id);
+            if (expediente == null)
             {
                 return NotFound();
             }
 
-            _context.Presentaciones.Remove(presentacion);
+            _context.Expedientes.Remove(expediente);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PresentacionExists(int id)
+        private bool ExpedienteExists(int id)
         {
-            return _context.Presentaciones.Any(e => e.IdPresentacion == id);
+            return _context.Expedientes.Any(e => e.IdExpediente == id);
         }
     }
 }
