@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FarmaciaApi.Dto;
+using Microsoft.EntityFrameworkCore;
 
 namespace FarmaciaApi.Models
 {
@@ -18,12 +19,14 @@ namespace FarmaciaApi.Models
         public DbSet<Prescripcion> Prescripciones { get; set; }
         public DbSet<PrescripcionDetalle> PrescripcionDetalles { get; set; }
         public DbSet<Presentacion> Presentaciones { get; set; }
+        public DbSet<PresentacionView> PresentacionView { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<UsuarioRol> UsuarioRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PresentacionView>().HasNoKey();
 
             //modelBuilder.Entity<Expediente>()
             //    .HasOne(e => e.Paciente)

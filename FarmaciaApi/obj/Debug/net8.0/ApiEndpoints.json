@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "FarmaciaApi.Controllers.DosificacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.DosificacionesController",
     "Method": "GetDosificaciones",
-    "RelativePath": "api/Dosificacions",
+    "RelativePath": "api/Dosificaciones",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,9 +20,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.DosificacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.DosificacionesController",
     "Method": "PostDosificacion",
-    "RelativePath": "api/Dosificacions",
+    "RelativePath": "api/Dosificaciones",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -46,9 +46,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.DosificacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.DosificacionesController",
     "Method": "GetDosificacion",
-    "RelativePath": "api/Dosificacions/{id}",
+    "RelativePath": "api/Dosificaciones/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -72,9 +72,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.DosificacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.DosificacionesController",
     "Method": "PutDosificacion",
-    "RelativePath": "api/Dosificacions/{id}",
+    "RelativePath": "api/Dosificaciones/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -93,9 +93,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.DosificacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.DosificacionesController",
     "Method": "DeleteDosificacion",
-    "RelativePath": "api/Dosificacions/{id}",
+    "RelativePath": "api/Dosificaciones/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -109,9 +109,118 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacoesController",
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "GetExpedientes",
+    "RelativePath": "api/Expedientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.Expediente, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "PostExpediente",
+    "RelativePath": "api/Expedientes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "expediente",
+        "Type": "FarmaciaApi.Models.Expediente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Expediente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "GetExpediente",
+    "RelativePath": "api/Expedientes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Expediente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "PutExpediente",
+    "RelativePath": "api/Expedientes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "expediente",
+        "Type": "FarmaciaApi.Models.Expediente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "DeleteExpediente",
+    "RelativePath": "api/Expedientes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "GetLoteFarmacos",
-    "RelativePath": "api/LoteFarmacoes",
+    "RelativePath": "api/LoteFarmacos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -129,9 +238,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacoesController",
+    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "PostLoteFarmaco",
-    "RelativePath": "api/LoteFarmacoes",
+    "RelativePath": "api/LoteFarmacos",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -155,9 +264,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacoesController",
+    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "GetLoteFarmaco",
-    "RelativePath": "api/LoteFarmacoes/{id}",
+    "RelativePath": "api/LoteFarmacos/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -181,9 +290,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacoesController",
+    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "PutLoteFarmaco",
-    "RelativePath": "api/LoteFarmacoes/{id}",
+    "RelativePath": "api/LoteFarmacos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -202,9 +311,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacoesController",
+    "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "DeleteLoteFarmaco",
-    "RelativePath": "api/LoteFarmacoes/{id}",
+    "RelativePath": "api/LoteFarmacos/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -327,9 +436,336 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.PresentacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.PacientesController",
+    "Method": "GetPacientes",
+    "RelativePath": "api/Pacientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.Paciente, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PacientesController",
+    "Method": "PostPaciente",
+    "RelativePath": "api/Pacientes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paciente",
+        "Type": "FarmaciaApi.Models.Paciente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Paciente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PacientesController",
+    "Method": "GetPaciente",
+    "RelativePath": "api/Pacientes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Paciente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PacientesController",
+    "Method": "PutPaciente",
+    "RelativePath": "api/Pacientes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "paciente",
+        "Type": "FarmaciaApi.Models.Paciente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PacientesController",
+    "Method": "DeletePaciente",
+    "RelativePath": "api/Pacientes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "GetPrescripcionDetalles",
+    "RelativePath": "api/PrescripcionDetalles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.PrescripcionDetalle, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "PostPrescripcionDetalle",
+    "RelativePath": "api/PrescripcionDetalles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prescripcionDetalle",
+        "Type": "FarmaciaApi.Models.PrescripcionDetalle",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.PrescripcionDetalle",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "GetPrescripcionDetalle",
+    "RelativePath": "api/PrescripcionDetalles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.PrescripcionDetalle",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "PutPrescripcionDetalle",
+    "RelativePath": "api/PrescripcionDetalles/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "prescripcionDetalle",
+        "Type": "FarmaciaApi.Models.PrescripcionDetalle",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "DeletePrescripcionDetalle",
+    "RelativePath": "api/PrescripcionDetalles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "GetPrescripciones",
+    "RelativePath": "api/Prescripciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.Prescripcion, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "PostPrescripcion",
+    "RelativePath": "api/Prescripciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prescripcion",
+        "Type": "FarmaciaApi.Models.Prescripcion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Prescripcion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "GetPrescripcion",
+    "RelativePath": "api/Prescripciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Prescripcion",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "PutPrescripcion",
+    "RelativePath": "api/Prescripciones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "prescripcion",
+        "Type": "FarmaciaApi.Models.Prescripcion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "DeletePrescripcion",
+    "RelativePath": "api/Prescripciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
     "Method": "GetPresentaciones",
-    "RelativePath": "api/Presentacions",
+    "RelativePath": "api/Presentaciones",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -347,9 +783,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.PresentacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
     "Method": "PostPresentacion",
-    "RelativePath": "api/Presentacions",
+    "RelativePath": "api/Presentaciones",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -373,9 +809,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.PresentacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
     "Method": "GetPresentacion",
-    "RelativePath": "api/Presentacions/{id}",
+    "RelativePath": "api/Presentaciones/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -399,9 +835,9 @@
     ]
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.PresentacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
     "Method": "PutPresentacion",
-    "RelativePath": "api/Presentacions/{id}",
+    "RelativePath": "api/Presentaciones/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -420,9 +856,273 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FarmaciaApi.Controllers.PresentacionsController",
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
     "Method": "DeletePresentacion",
-    "RelativePath": "api/Presentacions/{id}",
+    "RelativePath": "api/Presentaciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
+    "Method": "GetPresentacionesView",
+    "RelativePath": "api/Presentaciones/PresentacionesView",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.PresentacionView, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",
+    "Method": "GetPresentacionView",
+    "RelativePath": "api/Presentaciones/PresentacionesView/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.PresentacionView",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.RolesController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.Rol, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.RolesController",
+    "Method": "PostRol",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rol",
+        "Type": "FarmaciaApi.Models.Rol",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Rol",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.RolesController",
+    "Method": "GetRol",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Rol",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.RolesController",
+    "Method": "PutRol",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "rol",
+        "Type": "FarmaciaApi.Models.Rol",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.RolesController",
+    "Method": "DeleteRol",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.UsuariosController",
+    "Method": "GetUsuarios",
+    "RelativePath": "api/Usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.Models.Usuario, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.UsuariosController",
+    "Method": "PostUsuario",
+    "RelativePath": "api/Usuarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "FarmaciaApi.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Usuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.UsuariosController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/Usuarios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.Models.Usuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.UsuariosController",
+    "Method": "PutUsuario",
+    "RelativePath": "api/Usuarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "usuario",
+        "Type": "FarmaciaApi.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.UsuariosController",
+    "Method": "DeleteUsuario",
+    "RelativePath": "api/Usuarios/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
