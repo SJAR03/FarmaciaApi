@@ -4,6 +4,7 @@ using FarmaciaApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FarmaciaApi.Migrations
 {
     [DbContext(typeof(FarmaciaDbContext))]
-    partial class FarmaciaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240418215309_FarmaciaDbV2")]
+    partial class FarmaciaDbV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -376,54 +379,6 @@ namespace FarmaciaApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("PresentacionView");
-                });
-
-            modelBuilder.Entity("FarmaciaApi.ViewModel.LoteFarmacosView", b =>
-                {
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Concentracion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DescripcionLoteFarmaco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DescripcionPresentacion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdDosificacion")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdLoteFarmaco")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMedidas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPresentacion")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NombreDosificacion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombreLoteFarmaco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombreMedidas")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombrePresentacion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("LoteFarmacosView");
                 });
 #pragma warning restore 612, 618
         }

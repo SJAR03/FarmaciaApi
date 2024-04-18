@@ -20,14 +20,14 @@ namespace FarmaciaApi.Controllers
             _context = context;
         }
 
-        // GET: api/Dosificacions
+        // GET: api/Dosificaciones
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dosificacion>>> GetDosificaciones()
         {
             return await _context.Dosificaciones.ToListAsync();
         }
 
-        // GET: api/Dosificacions/5
+        // GET: api/Dosificaciones/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Dosificacion>> GetDosificacion(int id)
         {
@@ -41,7 +41,7 @@ namespace FarmaciaApi.Controllers
             return dosificacion;
         }
 
-        // PUT: api/Dosificacions/5
+        // PUT: api/Dosificaciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDosificacion(int id, Dosificacion dosificacion)
@@ -72,7 +72,7 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Dosificacions
+        // POST: api/Dosificaciones
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Dosificacion>> PostDosificacion(Dosificacion dosificacion)
@@ -83,7 +83,7 @@ namespace FarmaciaApi.Controllers
             return CreatedAtAction("GetDosificacion", new { id = dosificacion.IdDosificacion }, dosificacion);
         }
 
-        // DELETE: api/Dosificacions/5
+        // DELETE: api/Dosificaciones/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDosificacion(int id)
         {

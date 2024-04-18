@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
+using FarmaciaApi.ViewModel;
 
 namespace FarmaciaApi.Controllers
 {
@@ -20,14 +21,14 @@ namespace FarmaciaApi.Controllers
             _context = context;
         }
 
-        // GET: api/LoteFarmacoes
+        // GET: api/LoteFarmacos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LoteFarmaco>>> GetLoteFarmacos()
         {
             return await _context.LoteFarmacos.ToListAsync();
         }
 
-        // GET: api/LoteFarmacoes/5
+        // GET: api/LoteFarmacos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<LoteFarmaco>> GetLoteFarmaco(int id)
         {
@@ -41,7 +42,28 @@ namespace FarmaciaApi.Controllers
             return loteFarmaco;
         }
 
-        // PUT: api/LoteFarmacoes/5
+        // GET: api/LoteFarmacosView
+        [HttpGet("LoteFarmacosView")]
+        public async Task<ActionResult<IEnumerable<LoteFarmacosView>>> GetLoteFarmacosView()
+        {
+            return await _context.LoteFarmacosView.ToListAsync();
+        }
+
+        // GET: api/LoteFarmacosView/5
+        [HttpGet("LoteFarmacosView/{id}")]
+        public async Task<ActionResult<LoteFarmacosView>> GetLoteFarmacoView(int id)
+        {
+            var loteFarmaco = await _context.LoteFarmacosView.FindAsync(id);
+
+            if (loteFarmaco == null)
+            {
+                return NotFound();
+            }
+
+            return loteFarmaco;
+        }
+
+        // PUT: api/LoteFarmacos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLoteFarmaco(int id, LoteFarmaco loteFarmaco)
@@ -72,7 +94,7 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/LoteFarmacoes
+        // POST: api/LoteFarmacos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<LoteFarmaco>> PostLoteFarmaco(LoteFarmaco loteFarmaco)
@@ -83,7 +105,7 @@ namespace FarmaciaApi.Controllers
             return CreatedAtAction("GetLoteFarmaco", new { id = loteFarmaco.IdLoteFarmaco }, loteFarmaco);
         }
 
-        // DELETE: api/LoteFarmacoes/5
+        // DELETE: api/LoteFarmacos/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLoteFarmaco(int id)
         {

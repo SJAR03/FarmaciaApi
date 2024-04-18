@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
-using FarmaciaApi.Dto;
 
 namespace FarmaciaApi.Controllers
 {
@@ -21,14 +20,14 @@ namespace FarmaciaApi.Controllers
             _context = context;
         }
 
-        // GET: api/Presentacions
+        // GET: api/Presentaciones
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Presentacion>>> GetPresentaciones()
         {
             return await _context.Presentaciones.ToListAsync();
         }
 
-        // GET: api/Presentacions/5
+        // GET: api/Presentaciones/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
         {
@@ -42,14 +41,14 @@ namespace FarmaciaApi.Controllers
             return presentacion;
         }
 
-        // GET: api/PresentacionsView
+        // GET: api/PresentacionesView
         [HttpGet("PresentacionesView")]
         public async Task<ActionResult<IEnumerable<PresentacionView>>> GetPresentacionesView()
         {
             return await _context.PresentacionView.ToListAsync();
         }
 
-        // GET: api/PresentacionsView/5
+        // GET: api/PresentacionesView/5
         [HttpGet("PresentacionesView/{id}")]
         public async Task<ActionResult<PresentacionView>> GetPresentacionView(int id)
         {
@@ -63,7 +62,7 @@ namespace FarmaciaApi.Controllers
             return presentacion;
         }
 
-        // PUT: api/Presentacions/5
+        // PUT: api/Presentaciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPresentacion(int id, Presentacion presentacion)
@@ -94,7 +93,7 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Presentacions
+        // POST: api/Presentaciones
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Presentacion>> PostPresentacion(Presentacion presentacion)
@@ -105,7 +104,7 @@ namespace FarmaciaApi.Controllers
             return CreatedAtAction("GetPresentacion", new { id = presentacion.IdPresentacion }, presentacion);
         }
 
-        // DELETE: api/Presentacions/5
+        // DELETE: api/Presentaciones/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePresentacion(int id)
         {
