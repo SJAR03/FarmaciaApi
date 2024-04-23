@@ -21,6 +21,9 @@ namespace FarmaciaApi.Models
         public DbSet<Presentacion> Presentaciones { get; set; }
         public DbSet<PresentacionView> PresentacionView { get; set; }
         public DbSet<LoteFarmacosView> LoteFarmacosView { get; set; }
+        public DbSet<ExpedienteView> ExpedienteView { get; set; }
+        public DbSet<PrescripcionView> PrescripcionView { get; set; }
+        public DbSet<PrescripcionDetalleView> PrescripcionDetalleView { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<UsuarioRol> UsuarioRoles { get; set; }
@@ -29,6 +32,9 @@ namespace FarmaciaApi.Models
         {
             modelBuilder.Entity<PresentacionView>().HasNoKey();
             modelBuilder.Entity<LoteFarmacosView>().HasNoKey();
+            modelBuilder.Entity<ExpedienteView>().HasNoKey();
+            modelBuilder.Entity<PrescripcionView>().HasNoKey();
+            modelBuilder.Entity<PrescripcionDetalleView>().HasNoKey();
 
             //modelBuilder.Entity<Expediente>()
             //    .HasOne(e => e.Paciente)

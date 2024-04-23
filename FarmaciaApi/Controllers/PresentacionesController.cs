@@ -52,7 +52,7 @@ namespace FarmaciaApi.Controllers
         [HttpGet("PresentacionesView/{id}")]
         public async Task<ActionResult<PresentacionView>> GetPresentacionView(int id)
         {
-            var presentacion = await _context.PresentacionView.FindAsync(id);
+            var presentacion = await _context.PresentacionView.Where(p => p.IdPresentacion == id).FirstOrDefaultAsync();
 
             if (presentacion == null)
             {

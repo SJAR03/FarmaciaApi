@@ -53,7 +53,7 @@ namespace FarmaciaApi.Controllers
         [HttpGet("LoteFarmacosView/{id}")]
         public async Task<ActionResult<LoteFarmacosView>> GetLoteFarmacoView(int id)
         {
-            var loteFarmaco = await _context.LoteFarmacosView.FindAsync(id);
+            var loteFarmaco = await _context.LoteFarmacosView.Where(p => p.IdLoteFarmaco == id).FirstOrDefaultAsync();
 
             if (loteFarmaco == null)
             {

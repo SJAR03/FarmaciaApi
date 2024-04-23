@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
+using FarmaciaApi.ViewModel;
 
 namespace FarmaciaApi.Controllers
 {
@@ -39,6 +40,27 @@ namespace FarmaciaApi.Controllers
             }
 
             return prescripcionDetalle;
+        }
+
+        // GET: api/PrescripcionDetalleView
+        [HttpGet("PrescripcionDetalleView")]
+        public async Task<ActionResult<IEnumerable<PrescripcionDetalleView>>> GetPrescripcionDetalleView()
+        {
+            return await _context.PrescripcionDetalleView.ToListAsync();
+        }
+
+        // GET: api/PrescripcionDetalleView/5
+        [HttpGet("PrescripcionDetalleView/{id}")]
+        public async Task<ActionResult<PrescripcionDetalleView>> GetPrescripcionDetalleView(int id)
+        {
+            var PrescripcionDetalle = await _context.PrescripcionDetalleView.Where(p => p.IdPrescripcionDetalle == id).FirstOrDefaultAsync();
+
+            if (PrescripcionDetalle == null)
+            {
+                return NotFound();
+            }
+
+            return PrescripcionDetalle;
         }
 
         // PUT: api/PrescripcionDetalles/5
