@@ -218,6 +218,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "GetExpedienteView",
+    "RelativePath": "api/Expedientes/ExpedienteView",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.ViewModel.ExpedienteView, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.ExpedientesController",
+    "Method": "GetExpedienteView",
+    "RelativePath": "api/Expedientes/ExpedienteView/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.ViewModel.ExpedienteView",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FarmaciaApi.Controllers.LoteFarmacosController",
     "Method": "GetLoteFarmacos",
     "RelativePath": "api/LoteFarmacos",
@@ -700,6 +746,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "GetPrescripcionDetalleView",
+    "RelativePath": "api/PrescripcionDetalles/PrescripcionDetalleView",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.ViewModel.PrescripcionDetalleView, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionDetallesController",
+    "Method": "GetPrescripcionDetalleView",
+    "RelativePath": "api/PrescripcionDetalles/PrescripcionDetalleView/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.ViewModel.PrescripcionDetalleView",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
     "Method": "GetPrescripciones",
     "RelativePath": "api/Prescripciones",
@@ -807,6 +899,52 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "GetPrescripcionView",
+    "RelativePath": "api/Prescripciones/PrescripcionView",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FarmaciaApi.ViewModel.PrescripcionView, FarmaciaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FarmaciaApi.Controllers.PrescripcionesController",
+    "Method": "GetPrescripcionView",
+    "RelativePath": "api/Prescripciones/PrescripcionView/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FarmaciaApi.ViewModel.PrescripcionView",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "FarmaciaApi.Controllers.PresentacionesController",

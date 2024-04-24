@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\sayerdis\Desktop\Zona trabajo - Sergio\SJAR\FarmaciaApi</_PublishTargetUrl>
+    <History>True|2024-04-24T21:33:36.9999683Z;True|2024-04-24T15:33:12.9231768-06:00;True|2024-04-24T15:24:02.1965961-06:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="FarmaciaConnection">
+      <Value>Data Source=162.215.220.93%3bInitial Catalog=FarmaciaDB%3bPersist Security Info=True%3bUser ID=XERPADMIN%3bPassword=X07E14FC%3bPooling=False%3bEncrypt=True%3bTrust Server Certificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

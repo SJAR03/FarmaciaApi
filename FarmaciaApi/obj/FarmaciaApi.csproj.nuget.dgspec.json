@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UCA\\Semestres URL\\Primer Semestre 2024\\Análisis y Diseño\\4 - Abril\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj": {}
+    "C:\\Users\\sayerdis\\Desktop\\Zona trabajo - Sergio\\SJAR\\asp net core\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj": {}
   },
   "projects": {
-    "D:\\UCA\\Semestres URL\\Primer Semestre 2024\\Análisis y Diseño\\4 - Abril\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj": {
+    "C:\\Users\\sayerdis\\Desktop\\Zona trabajo - Sergio\\SJAR\\asp net core\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UCA\\Semestres URL\\Primer Semestre 2024\\Análisis y Diseño\\4 - Abril\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj",
+        "projectUniqueName": "C:\\Users\\sayerdis\\Desktop\\Zona trabajo - Sergio\\SJAR\\asp net core\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj",
         "projectName": "FarmaciaApi",
-        "projectPath": "D:\\UCA\\Semestres URL\\Primer Semestre 2024\\Análisis y Diseño\\4 - Abril\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj",
-        "packagesPath": "C:\\Users\\marmo\\.nuget\\packages\\",
-        "outputPath": "D:\\UCA\\Semestres URL\\Primer Semestre 2024\\Análisis y Diseño\\4 - Abril\\FarmaciaApi\\FarmaciaApi\\obj\\",
+        "projectPath": "C:\\Users\\sayerdis\\Desktop\\Zona trabajo - Sergio\\SJAR\\asp net core\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.csproj",
+        "packagesPath": "C:\\Users\\sayerdis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sayerdis\\Desktop\\Zona trabajo - Sergio\\SJAR\\asp net core\\FarmaciaApi\\FarmaciaApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\marmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sayerdis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

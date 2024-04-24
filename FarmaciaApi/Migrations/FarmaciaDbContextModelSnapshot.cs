@@ -378,14 +378,58 @@ namespace FarmaciaApi.Migrations
                     b.ToTable("PresentacionView");
                 });
 
+            modelBuilder.Entity("FarmaciaApi.ViewModel.ExpedienteView", b =>
+                {
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaNacimiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdExpediente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPaciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sexo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("ExpedienteView");
+                });
+
             modelBuilder.Entity("FarmaciaApi.ViewModel.LoteFarmacosView", b =>
                 {
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<string>("Concentracion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Concentracion")
+                        .HasColumnType("int");
 
                     b.Property<string>("DescripcionLoteFarmaco")
                         .IsRequired()
@@ -424,6 +468,79 @@ namespace FarmaciaApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("LoteFarmacosView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.PrescripcionDetalleView", b =>
+                {
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Concentracion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Dosis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Duracion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdLoteFarmaco")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcionDetalle")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Instrucciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("PrescripcionDetalleView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.PrescripcionView", b =>
+                {
+                    b.Property<string>("Dosis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Duracion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdExpediente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Instrucciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("PrescripcionView");
                 });
 #pragma warning restore 612, 618
         }

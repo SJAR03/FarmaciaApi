@@ -70,14 +70,51 @@ namespace FarmaciaApi.Controllers
         {
             if (id != prescripcionDetalle.IdPrescripcionDetalle)
             {
-                return BadRequest();
+                return BadRequest("Invalid request. The provided id does not match the id in the object.");
             }
 
-            _context.Entry(prescripcionDetalle).State = EntityState.Modified;
+            PrescripcionDetalle existingPrescripcionDetalle = await _context.PrescripcionDetalles.FindAsync(id);
+
+            if (existingPrescripcionDetalle == null)
+            {
+                return NotFound("The specified prescription detail was not found.");
+            }
+
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(existingPrescripcionDetalle.IdLoteFarmaco);
+
+            if (loteFarmaco == null)
+            {
+                return NotFound("The specified lot was not found.");
+            }
+
+            // Calcular la diferencia entre la nueva cantidad y la cantidad original de la prescripción
+            int cantidadDiferencia = prescripcionDetalle.Cantidad - existingPrescripcionDetalle.Cantidad;
+
+            // Verificar si la cantidad solicitada es mayor que la cantidad original de la prescripción
+            if (cantidadDiferencia > 0)
+            {
+                // Verificar si hay suficiente cantidad disponible en el lote de fármacos
+                if (cantidadDiferencia > loteFarmaco.Cantidad)
+                {
+                    return BadRequest("Insufficient quantity in the specified lot.");
+                }
+
+                // Actualizar la cantidad disponible en el lote de fármacos
+                loteFarmaco.Cantidad -= cantidadDiferencia;
+            }
+            else // Si la cantidad solicitada es menor o igual que la cantidad original de la prescripción
+            {
+                // Actualizar la cantidad disponible en el lote de fármacos
+                loteFarmaco.Cantidad += Math.Abs(cantidadDiferencia); // Añadir la diferencia absoluta
+            }
+
+            // Actualizar la cantidad en el detalle de prescripción
+            existingPrescripcionDetalle.Cantidad = prescripcionDetalle.Cantidad;
 
             try
             {
                 await _context.SaveChangesAsync();
+                return NoContent();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -90,8 +127,6 @@ namespace FarmaciaApi.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
         }
 
         // POST: api/PrescripcionDetalles
@@ -99,11 +134,21 @@ namespace FarmaciaApi.Controllers
         [HttpPost]
         public async Task<ActionResult<PrescripcionDetalle>> PostPrescripcionDetalle(PrescripcionDetalle prescripcionDetalle)
         {
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(prescripcionDetalle.IdLoteFarmaco);
+
+            if (loteFarmaco == null || loteFarmaco.Cantidad < prescripcionDetalle.Cantidad)
+            {
+                return BadRequest("Cantidad insufiente en el lote de farmacos");
+            }
+
+            loteFarmaco.Cantidad -= prescripcionDetalle.Cantidad;
+
             _context.PrescripcionDetalles.Add(prescripcionDetalle);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPrescripcionDetalle", new { id = prescripcionDetalle.IdPrescripcionDetalle }, prescripcionDetalle);
         }
+
 
         // DELETE: api/PrescripcionDetalles/5
         [HttpDelete("{id}")]
