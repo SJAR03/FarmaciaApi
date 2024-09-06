@@ -1,4 +1,8 @@
 using FarmaciaApi.Models;
+using FarmaciaApi.Repositories;
+using FarmaciaApi.Repositories.Interfaces;
+using FarmaciaApi.Services;
+using FarmaciaApi.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +16,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<FarmaciaDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("FarmaciaConnection")));
+
+builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
+builder.Services.AddScoped<IPacienteService, PacienteService>();
 
 var app = builder.Build();
 

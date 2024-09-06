@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
+using FarmaciaApi.Services.Interfaces;
 
 namespace FarmaciaApi.Controllers
 {
@@ -13,36 +14,40 @@ namespace FarmaciaApi.Controllers
     [ApiController]
     public class PacientesController : ControllerBase
     {
-        private readonly FarmaciaDbContext _context;
+        private readonly IPacienteService _pacienteService;
 
-        public PacientesController(FarmaciaDbContext context)
+        public PacientesController(IPacienteService pacienteService)
         {
-            _context = context;
+            _pacienteService = pacienteService;
         }
 
-        // GET: api/Pacientes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes()
         {
-            return await _context.Pacientes.ToListAsync();
+            var pacientes = await _pacienteService.GetAllPacientesAsync();
+            return Ok(pacientes);
         }
 
-        // GET: api/Pacientes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Paciente>> GetPaciente(int id)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
+            var paciente = await _pacienteService.GetPacienteByIdAsync(id);
 
             if (paciente == null)
             {
                 return NotFound();
             }
 
-            return paciente;
+            return Ok(paciente);
         }
 
-        // PUT: api/Pacientes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
+        {
+            await _pacienteService.AddPacienteAsync(paciente);
+            return CreatedAtAction(nameof(GetPaciente), new { id = paciente.IdPaciente }, paciente);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPaciente(int id, Paciente paciente)
         {
@@ -51,57 +56,21 @@ namespace FarmaciaApi.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(paciente).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PacienteExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _pacienteService.UpdatePacienteAsync(id, paciente);
             return NoContent();
         }
 
-        // POST: api/Pacientes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
-        {
-            _context.Pacientes.Add(paciente);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPaciente", new { id = paciente.IdPaciente }, paciente);
-        }
-
-        // DELETE: api/Pacientes/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePaciente(int id)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
-            if (paciente == null)
+            var pacienteExists = await _pacienteService.PacienteExistsAsync(id);
+            if (!pacienteExists)
             {
                 return NotFound();
             }
 
-            _context.Pacientes.Remove(paciente);
-            await _context.SaveChangesAsync();
-
+            await _pacienteService.DeletePacienteAsync(id);
             return NoContent();
-        }
-
-        private bool PacienteExists(int id)
-        {
-            return _context.Pacientes.Any(e => e.IdPaciente == id);
         }
     }
 }
