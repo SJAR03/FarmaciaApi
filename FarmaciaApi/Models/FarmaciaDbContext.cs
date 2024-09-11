@@ -1,5 +1,7 @@
 ﻿using FarmaciaApi.ViewModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace FarmaciaApi.Models
 {
@@ -7,6 +9,21 @@ namespace FarmaciaApi.Models
     {
         public FarmaciaDbContext(DbContextOptions<FarmaciaDbContext> options) : base(options)
         {
+            var dbCreater = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+            if(dbCreater != null)
+            {
+                // Create the database if it doesn't exist
+                if(!dbCreater.CanConnect())
+                {
+                    dbCreater.Create();
+                }
+
+                // Create the tables if they don't exist
+                if(!dbCreater.HasTables())
+                {
+                    dbCreater.CreateTables();
+                }
+            }
         }
 
         public DbSet<Dosificacion> Dosificaciones { get; set; }
