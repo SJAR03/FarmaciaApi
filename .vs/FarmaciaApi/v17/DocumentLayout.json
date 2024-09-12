@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\farmaciaapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\farmaciaapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\docker-compose.dcproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|solutionrelative:docker-compose.dcproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,28 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FarmaciaApi.http",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.http",
-              "RelativeDocumentMoniker": "FarmaciaApi\\FarmaciaApi.http",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\FarmaciaApi.http",
-              "RelativeToolTip": "FarmaciaApi\\FarmaciaApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-09-11T05:39:26.118Z",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
+              "RelativeDocumentMoniker": "FarmaciaApi\\appsettings.json",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
+              "RelativeToolTip": "FarmaciaApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-12T00:27:23.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "docker-compose.override.yml",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.override.yml",
-              "RelativeDocumentMoniker": "docker-compose.override.yml",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.override.yml",
-              "RelativeToolTip": "docker-compose.override.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-09-11T05:33:06.118Z",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Program.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
+              "RelativeToolTip": "FarmaciaApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T00:14:46.735Z",
               "EditorCaption": ""
             },
             {
@@ -74,27 +66,14 @@
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-09-11T05:27:06.372Z",
+              "WhenOpened": "2024-09-12T00:10:31.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "docker-compose",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.dcproj",
-              "RelativeDocumentMoniker": "docker-compose.dcproj",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.dcproj",
-              "RelativeToolTip": "docker-compose.dcproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-11T05:27:03.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Dockerfile",
               "RelativeDocumentMoniker": "FarmaciaApi\\Dockerfile",
@@ -102,20 +81,7 @@
               "RelativeToolTip": "FarmaciaApi\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-11T05:19:33.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
-              "RelativeDocumentMoniker": "FarmaciaApi\\appsettings.json",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
-              "RelativeToolTip": "FarmaciaApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-11T05:16:18.388Z",
+              "WhenOpened": "2024-09-12T00:10:29.542Z",
               "EditorCaption": ""
             }
           ]

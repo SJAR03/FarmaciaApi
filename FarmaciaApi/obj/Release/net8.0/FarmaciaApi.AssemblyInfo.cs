@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("63079594-f6d1-4e51-b70a-0ff8db0f52da")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FarmaciaApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58dcacc0046a096920823eb4c8dc7fdfa460661b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5da20cab107b6370fd8cf2d4707ca46da95dfe4")]
 [assembly: System.Reflection.AssemblyProductAttribute("FarmaciaApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FarmaciaApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
