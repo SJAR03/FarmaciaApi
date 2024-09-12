@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copia el archivo csproj y restaura las dependencias
-COPY FarmaciaApi/FarmaciaApi.csproj FarmaciaApi/
+COPY ./FarmaciaApi/FarmaciaApi.csproj ./FarmaciaApi/
 WORKDIR /src/FarmaciaApi
 RUN dotnet restore
 
