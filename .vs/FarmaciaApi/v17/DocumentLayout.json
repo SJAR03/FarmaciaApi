@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6CFF639F-5E5E-406D-BCA6-4510C967C596}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\models\\expediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\models\\expediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
-              "RelativeDocumentMoniker": "FarmaciaApi\\appsettings.json",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
-              "RelativeToolTip": "FarmaciaApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-12T00:27:23.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Program.cs",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
-              "RelativeToolTip": "FarmaciaApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T00:14:46.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-09-12T00:10:31.82Z",
+              "Title": "Expediente.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Expediente.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Models\\Expediente.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Expediente.cs",
+              "RelativeToolTip": "FarmaciaApi\\Models\\Expediente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:22:16.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Dockerfile",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Dockerfile",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Dockerfile",
-              "RelativeToolTip": "FarmaciaApi\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-12T00:10:29.542Z",
+              "DocumentIndex": 0,
+              "Title": "Paciente.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Paciente.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Models\\Paciente.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Paciente.cs",
+              "RelativeToolTip": "FarmaciaApi\\Models\\Paciente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T23:41:51.986Z",
               "EditorCaption": ""
             }
           ]
