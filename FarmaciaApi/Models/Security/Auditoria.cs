@@ -6,15 +6,14 @@ namespace FarmaciaApi.Models.Security
     public class Auditoria
     {
         [Key]
-        public Guid IdAuditoria { get; set; }
+        public int IdAuditoria { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(50)")]
         public string Tabla { get; set; }
 
         [Required]
-        [Column(TypeName = "int(8)")]
-        public string IdRegistro { get; set; }
+        public int IdRegistro { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(50)")]
@@ -24,7 +23,7 @@ namespace FarmaciaApi.Models.Security
         public DateTime Fecha { get; set; }
 
         [Required]
-        public Guid IdUsuario { get; set; } // llave foranea de usuario
+        public int IdUsuario { get; set; } // llave foranea de usuario
 
         [ForeignKey("IdUsuario")]
         public Usuario Usuario { get; set; } // propiedad de navegacion

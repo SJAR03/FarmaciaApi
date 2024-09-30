@@ -41,27 +41,6 @@ namespace FarmaciaApi.Controllers
             return presentacion;
         }
 
-        // GET: api/PresentacionesView
-        [HttpGet("PresentacionesView")]
-        public async Task<ActionResult<IEnumerable<PresentacionView>>> GetPresentacionesView()
-        {
-            return await _context.PresentacionView.ToListAsync();
-        }
-
-        // GET: api/PresentacionesView/5
-        [HttpGet("PresentacionesView/{id}")]
-        public async Task<ActionResult<PresentacionView>> GetPresentacionView(int id)
-        {
-            var presentacion = await _context.PresentacionView.Where(p => p.IdPresentacion == id).FirstOrDefaultAsync();
-
-            if (presentacion == null)
-            {
-                return NotFound();
-            }
-
-            return presentacion;
-        }
-
         // PUT: api/Presentaciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

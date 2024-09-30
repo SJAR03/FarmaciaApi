@@ -42,27 +42,6 @@ namespace FarmaciaApi.Controllers
             return prescripcionDetalle;
         }
 
-        // GET: api/PrescripcionDetalleView
-        [HttpGet("PrescripcionDetalleView")]
-        public async Task<ActionResult<IEnumerable<PrescripcionDetalleView>>> GetPrescripcionDetalleView()
-        {
-            return await _context.PrescripcionDetalleView.ToListAsync();
-        }
-
-        // GET: api/PrescripcionDetalleView/5
-        [HttpGet("PrescripcionDetalleView/{id}")]
-        public async Task<ActionResult<PrescripcionDetalleView>> GetPrescripcionDetalleView(int id)
-        {
-            var PrescripcionDetalle = await _context.PrescripcionDetalleView.Where(p => p.IdPrescripcionDetalle == id).FirstOrDefaultAsync();
-
-            if (PrescripcionDetalle == null)
-            {
-                return NotFound();
-            }
-
-            return PrescripcionDetalle;
-        }
-
         // PUT: api/PrescripcionDetalles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -80,7 +59,7 @@ namespace FarmaciaApi.Controllers
                 return NotFound("The specified prescription detail was not found.");
             }
 
-            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(existingPrescripcionDetalle.IdLoteFarmaco);
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(existingPrescripcionDetalle.IdFarmacoPresentacion);
 
             if (loteFarmaco == null)
             {
@@ -134,7 +113,7 @@ namespace FarmaciaApi.Controllers
         [HttpPost]
         public async Task<ActionResult<PrescripcionDetalle>> PostPrescripcionDetalle(PrescripcionDetalle prescripcionDetalle)
         {
-            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(prescripcionDetalle.IdLoteFarmaco);
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(prescripcionDetalle.IdFarmacoPresentacion);
 
             if (loteFarmaco == null || loteFarmaco.Cantidad < prescripcionDetalle.Cantidad)
             {

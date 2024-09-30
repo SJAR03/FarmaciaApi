@@ -1,17 +1,20 @@
 name: dockercompose11600496811176816611
 services:
-  farmaciaapi:
+  api:
     build:
       context: C:\dev\asp-net-core\ultimo\FarmaciaApi
       dockerfile: FarmaciaApi/Dockerfile
       args:
-        BUILD_CONFIGURATION: Debug
+        BUILD_CONFIGURATION: Release
         LAUNCHING_FROM_VS: "true"
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: FarmaciaApi
-      target: base
-    container_name: FarmaciaApi_1
+    container_name: FarmaciaApi
+    depends_on:
+      db:
+        condition: service_started
+        required: true
     entrypoint:
       - dotnet
       - --roll-forward
@@ -22,23 +25,22 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
-      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
-      DOTNET_USE_POLLING_FILE_WATCHER: "1"
-      NUGET_FALLBACK_PACKAGES: ""
-    image: farmaciaapi:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/FarmaciaApi.dll"'
+      com.microsoft.visual-studio.project-name: FarmaciaApi
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/FarmaciaApi.dll"'
       com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
-      default: null
+      backend: null
     ports:
       - mode: ingress
         target: 8080
+        published: "8080"
         protocol: tcp
       - mode: ingress
         target: 8081
+        published: "8081"
         protocol: tcp
     tty: true
     volumes:
@@ -55,24 +57,8 @@ services:
         bind:
           create_host_path: true
       - type: bind
-        source: C:\dev\asp-net-core\ultimo\FarmaciaApi\FarmaciaApi
-        target: /app
-        bind:
-          create_host_path: true
-      - type: bind
-        source: C:\dev\asp-net-core\ultimo\FarmaciaApi
-        target: /src
-        bind:
-          create_host_path: true
-      - type: bind
         source: C:\Users\sayer\vsdbg\vs2017u5
         target: /remote_debugger
-        bind:
-          create_host_path: true
-      - type: bind
-        source: C:\Users\sayer\.nuget\packages
-        target: /.nuget/packages
-        read_only: true
         bind:
           create_host_path: true
       - type: bind
@@ -99,6 +85,35 @@ services:
         read_only: true
         bind:
           create_host_path: true
+  db:
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: FarmaciaApi.2024
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - echo 'SELECT 1' | /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P FarmaciaApi.2024
+      timeout: 5s
+      interval: 10s
+      retries: 5
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      backend: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: sqlvolume
+        target: /var/opt/mssql
+        volume: {}
 networks:
-  default:
-    name: dockercompose11600496811176816611_default
+  backend:
+    name: dockercompose11600496811176816611_backend
+    driver: bridge
+volumes:
+  sqlvolume:
+    name: dockercompose11600496811176816611_sqlvolume

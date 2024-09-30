@@ -6,7 +6,7 @@ namespace FarmaciaApi.Models.Security
     public class Usuario
     {
         [Key]
-        public Guid IdUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(30)")]
@@ -22,6 +22,5 @@ namespace FarmaciaApi.Models.Security
 
         [Required]
         public int Estado { get; set; }
-
     }
 }

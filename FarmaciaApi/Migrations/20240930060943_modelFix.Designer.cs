@@ -4,6 +4,7 @@ using FarmaciaApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FarmaciaApi.Migrations
 {
     [DbContext(typeof(FarmaciaDbContext))]
-    partial class FarmaciaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240930060943_modelFix")]
+    partial class modelFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,48 +102,6 @@ namespace FarmaciaApi.Migrations
                     b.ToTable("Expedientes");
                 });
 
-            modelBuilder.Entity("FarmaciaApi.Models.FarmacoPresentacion", b =>
-                {
-                    b.Property<int>("IdLoteFarmacoDetalles")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLoteFarmacoDetalles"));
-
-                    b.Property<int>("Estado")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("FechaModificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdLoteFarmaco")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPresentacion")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdUsuarioCreacion")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdUsuarioModificacion")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdLoteFarmacoDetalles");
-
-                    b.HasIndex("IdLoteFarmaco");
-
-                    b.HasIndex("IdPresentacion");
-
-                    b.HasIndex("IdUsuarioCreacion");
-
-                    b.HasIndex("IdUsuarioModificacion");
-
-                    b.ToTable("LoteFarmacoDetalles");
-                });
-
             modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
                 {
                     b.Property<int>("IdLoteFarmaco")
@@ -182,6 +143,48 @@ namespace FarmaciaApi.Migrations
                     b.HasIndex("IdUsuarioModificacion");
 
                     b.ToTable("LoteFarmacos");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.LoteFarmacoDetalles", b =>
+                {
+                    b.Property<int>("IdLoteFarmacoDetalles")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLoteFarmacoDetalles"));
+
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdLoteFarmaco")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPresentacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUsuarioCreacion")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdUsuarioModificacion")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdLoteFarmacoDetalles");
+
+                    b.HasIndex("IdLoteFarmaco");
+
+                    b.HasIndex("IdPresentacion");
+
+                    b.HasIndex("IdUsuarioCreacion");
+
+                    b.HasIndex("IdUsuarioModificacion");
+
+                    b.ToTable("LoteFarmacoDetalles");
                 });
 
             modelBuilder.Entity("FarmaciaApi.Models.Medidas", b =>
@@ -351,7 +354,7 @@ namespace FarmaciaApi.Migrations
                     b.Property<DateTime?>("FechaModificacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdFarmacoPresentacion")
+                    b.Property<int>("IdLoteFarmaco")
                         .HasColumnType("int");
 
                     b.Property<int>("IdPrescripcion")
@@ -365,7 +368,7 @@ namespace FarmaciaApi.Migrations
 
                     b.HasKey("IdPrescripcionDetalle");
 
-                    b.HasIndex("IdFarmacoPresentacion");
+                    b.HasIndex("IdLoteFarmaco");
 
                     b.HasIndex("IdPrescripcion");
 
@@ -586,6 +589,201 @@ namespace FarmaciaApi.Migrations
                     b.ToTable("UsuarioRoles");
                 });
 
+            modelBuilder.Entity("FarmaciaApi.PresentacionView", b =>
+                {
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdDosificacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdMedidas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPresentacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreDosificacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreMedidas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("PresentacionView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.ExpedienteView", b =>
+                {
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaNacimiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdExpediente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPaciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sexo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("ExpedienteView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.LoteFarmacosView", b =>
+                {
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Concentracion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DescripcionLoteFarmaco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescripcionPresentacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdDosificacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdLoteFarmaco")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdMedidas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPresentacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombreDosificacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreLoteFarmaco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreMedidas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombrePresentacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("LoteFarmacosView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.PrescripcionDetalleView", b =>
+                {
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Concentracion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Dosis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Duracion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdLoteFarmaco")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcionDetalle")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Instrucciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("PrescripcionDetalleView");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.ViewModel.PrescripcionView", b =>
+                {
+                    b.Property<string>("Dosis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Duracion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdExpediente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescripcion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Instrucciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("PrescripcionView");
+                });
+
             modelBuilder.Entity("FarmaciaApi.Models.Dosificacion", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioCreacion")
@@ -630,7 +828,25 @@ namespace FarmaciaApi.Migrations
                     b.Navigation("UsuarioModificacion");
                 });
 
-            modelBuilder.Entity("FarmaciaApi.Models.FarmacoPresentacion", b =>
+            modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
+                {
+                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioCreacion")
+                        .WithMany()
+                        .HasForeignKey("IdUsuarioCreacion")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioModificacion")
+                        .WithMany()
+                        .HasForeignKey("IdUsuarioModificacion")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("UsuarioCreacion");
+
+                    b.Navigation("UsuarioModificacion");
+                });
+
+            modelBuilder.Entity("FarmaciaApi.Models.LoteFarmacoDetalles", b =>
                 {
                     b.HasOne("FarmaciaApi.Models.LoteFarmaco", "LoteFarmaco")
                         .WithMany()
@@ -658,24 +874,6 @@ namespace FarmaciaApi.Migrations
                     b.Navigation("LoteFarmaco");
 
                     b.Navigation("Presentacion");
-
-                    b.Navigation("UsuarioCreacion");
-
-                    b.Navigation("UsuarioModificacion");
-                });
-
-            modelBuilder.Entity("FarmaciaApi.Models.LoteFarmaco", b =>
-                {
-                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioCreacion")
-                        .WithMany()
-                        .HasForeignKey("IdUsuarioCreacion")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioModificacion")
-                        .WithMany()
-                        .HasForeignKey("IdUsuarioModificacion")
-                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("UsuarioCreacion");
 
@@ -746,9 +944,9 @@ namespace FarmaciaApi.Migrations
 
             modelBuilder.Entity("FarmaciaApi.Models.PrescripcionDetalle", b =>
                 {
-                    b.HasOne("FarmaciaApi.Models.FarmacoPresentacion", "FarmacoPresentacion")
+                    b.HasOne("FarmaciaApi.Models.LoteFarmaco", "LoteFarmaco")
                         .WithMany()
-                        .HasForeignKey("IdFarmacoPresentacion")
+                        .HasForeignKey("IdLoteFarmaco")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -769,7 +967,7 @@ namespace FarmaciaApi.Migrations
                         .HasForeignKey("IdUsuarioModificacion")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("FarmacoPresentacion");
+                    b.Navigation("LoteFarmaco");
 
                     b.Navigation("Prescripcion");
 

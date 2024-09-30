@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FarmaciaApi.Models;
 using FarmaciaApi.Models.Security;
+using FarmaciaApi.Models;
 
 namespace FarmaciaApi.Controllers
 {

@@ -1,20 +1,28 @@
 ﻿using FarmaciaApi.Models.Security;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace FarmaciaApi.Models
 {
-    public class Medidas
+    public class FarmacoPresentacion
     {
         [Key]
-        public int IdMedidas { get; set; }
-
-        [Required]
-        [Column(TypeName = "nvarchar(50)")]
-        public string Nombre { get; set; }
+        public int IdLoteFarmacoDetalles { get; set; }
 
         [Required]
         public int Estado { get; set; }
+
+        [Required]
+        public int IdLoteFarmaco { get; set; } // llave foranea
+
+        [ForeignKey("IdLoteFarmaco")]
+        public LoteFarmaco LoteFarmaco { get; set; } // propiedad de navegacion
+
+        [Required]
+        public int IdPresentacion { get; set; } // llave foranea
+
+        [ForeignKey("IdPresentacion")]
+        public Presentacion Presentacion { get; set; } // propiedad de navegacion
 
         // llave foranea para el usuario que creo el registro
         [Required]

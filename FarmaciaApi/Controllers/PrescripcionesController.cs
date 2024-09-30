@@ -42,26 +42,6 @@ namespace FarmaciaApi.Controllers
             return prescripcion;
         }
 
-        // GET: api/PrescripcionView
-        [HttpGet("PrescripcionView")]
-        public async Task<ActionResult<IEnumerable<PrescripcionView>>> GetPrescripcionView()
-        {
-            return await _context.PrescripcionView.ToListAsync();
-        }
-
-        // GET: api/PrescripcionView/5
-        [HttpGet("PrescripcionView/{id}")]
-        public async Task<ActionResult<PrescripcionView>> GetPrescripcionView(int id)
-        {
-            var Prescripcion = await _context.PrescripcionView.Where(p => p.IdPrescripcion == id).FirstOrDefaultAsync();
-
-            if (Prescripcion == null)
-            {
-                return NotFound();
-            }
-
-            return Prescripcion;
-        }
         // PUT: api/Prescripciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

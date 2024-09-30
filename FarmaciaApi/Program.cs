@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FarmaciaDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("FarmaciaConnection")));
 
+// Register services
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
 

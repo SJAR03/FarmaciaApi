@@ -6,7 +6,7 @@ namespace FarmaciaApi.Models.Security
     public class Rol
     {
         [Key]
-        public Guid IdRol { get; set; }
+        public int IdRol { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(50)")]

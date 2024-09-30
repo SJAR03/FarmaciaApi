@@ -6,7 +6,7 @@ namespace FarmaciaApi.Models.Security
     public class Permisos
     {
         [Key]
-        public Guid IdPermisos { get; set; }
+        public int IdPermisos { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(50)")]

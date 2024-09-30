@@ -6,16 +6,19 @@ namespace FarmaciaApi.Models.Security
     public class UsuarioRoles
     {
         [Key]
-        public Guid IdUsuarioRoles { get; set; }
+        public int IdUsuarioRoles { get; set; }
 
         [Required]
-        public Guid IdUsuario { get; set; } // llave foranea
+        public int Estado { get; set; }
+
+        [Required]
+        public int IdUsuario { get; set; } // llave foranea
 
         [ForeignKey("IdUsuario")]
         public Usuario Usuario { get; set; } // propiedad de navegacion
 
         [Required]
-        public Guid IdRol { get; set; } // llave foranea
+        public int IdRol { get; set; } // llave foranea
 
         [ForeignKey("IdRol")]
         public Rol Rol { get; set; } // propiedad de navegacion

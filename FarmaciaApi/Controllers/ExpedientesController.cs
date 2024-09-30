@@ -42,26 +42,6 @@ namespace FarmaciaApi.Controllers
             return expediente;
         }
 
-        // GET: api/ExpedienteView
-        [HttpGet("ExpedienteView")]
-        public async Task<ActionResult<IEnumerable<ExpedienteView>>> GetExpedienteView()
-        {
-            return await _context.ExpedienteView.ToListAsync();
-        }
-
-        // GET: api/ExpedienteView/5
-        [HttpGet("ExpedienteView/{id}")]
-        public async Task<ActionResult<ExpedienteView>> GetExpedienteView(int id)
-        {
-            var Expediente = await _context.ExpedienteView.Where(p => p.IdExpediente == id).FirstOrDefaultAsync();
-
-            if (Expediente == null)
-            {
-                return NotFound();
-            }
-
-            return Expediente;
-        }
         // PUT: api/Expedientes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

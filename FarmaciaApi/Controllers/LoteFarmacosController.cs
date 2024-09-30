@@ -42,27 +42,6 @@ namespace FarmaciaApi.Controllers
             return loteFarmaco;
         }
 
-        // GET: api/LoteFarmacosView
-        [HttpGet("LoteFarmacosView")]
-        public async Task<ActionResult<IEnumerable<LoteFarmacosView>>> GetLoteFarmacosView()
-        {
-            return await _context.LoteFarmacosView.ToListAsync();
-        }
-
-        // GET: api/LoteFarmacosView/5
-        [HttpGet("LoteFarmacosView/{id}")]
-        public async Task<ActionResult<LoteFarmacosView>> GetLoteFarmacoView(int id)
-        {
-            var loteFarmaco = await _context.LoteFarmacosView.Where(p => p.IdLoteFarmaco == id).FirstOrDefaultAsync();
-
-            if (loteFarmaco == null)
-            {
-                return NotFound();
-            }
-
-            return loteFarmaco;
-        }
-
         // PUT: api/LoteFarmacos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
