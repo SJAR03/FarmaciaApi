@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using FarmaciaApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaApi.Controllers
 {
@@ -21,6 +22,7 @@ namespace FarmaciaApi.Controllers
             _pacienteService = pacienteService;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes()
         {
@@ -28,6 +30,7 @@ namespace FarmaciaApi.Controllers
             return Ok(pacientes);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Paciente>> GetPaciente(int id)
         {
@@ -41,6 +44,7 @@ namespace FarmaciaApi.Controllers
             return Ok(paciente);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
         {
@@ -48,6 +52,7 @@ namespace FarmaciaApi.Controllers
             return CreatedAtAction(nameof(GetPaciente), new { id = paciente.IdPaciente }, paciente);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPaciente(int id, Paciente paciente)
         {
@@ -60,6 +65,7 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePaciente(int id)
         {

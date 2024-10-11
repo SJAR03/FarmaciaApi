@@ -37,6 +37,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Usuarios/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -52,6 +53,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -83,6 +85,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
@@ -111,6 +114,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Usuarios/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {

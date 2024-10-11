@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using FarmaciaApi.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaApi.Controllers
 {
@@ -22,6 +23,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/PrescripcionDetalles
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PrescripcionDetalle>>> GetPrescripcionDetalles()
         {
@@ -29,6 +31,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/PrescripcionDetalles/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<PrescripcionDetalle>> GetPrescripcionDetalle(int id)
         {
@@ -44,6 +47,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/PrescripcionDetalles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPrescripcionDetalle(int id, PrescripcionDetalle prescripcionDetalle)
         {
@@ -110,6 +114,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/PrescripcionDetalles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<PrescripcionDetalle>> PostPrescripcionDetalle(PrescripcionDetalle prescripcionDetalle)
         {
@@ -130,6 +135,7 @@ namespace FarmaciaApi.Controllers
 
 
         // DELETE: api/PrescripcionDetalles/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePrescripcionDetalle(int id)
         {

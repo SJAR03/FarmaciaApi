@@ -764,6 +764,7 @@ C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\FarmaciaApi.runtimeconfig.json
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\FarmaciaApi.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\FarmaciaApi.pdb
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\FarmaciaApi.xml
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Humanizer.dll
@@ -790,7 +791,13 @@ C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -1008,8 +1015,7 @@ C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\Farmacia.63889FE3.Up2Date
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\FarmaciaApi.dll
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\refint\FarmaciaApi.dll
+C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\FarmaciaApi.xml
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\FarmaciaApi.pdb
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\FarmaciaApi.genruntimeconfig.cache
 C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\ref\FarmaciaApi.dll
-C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\bin\Debug\net8.0\FarmaciaApi.xml
-C:\Users\sayerdis\Documents\Dev\Prueba\FarmaciaApi\FarmaciaApi\obj\Debug\net8.0\FarmaciaApi.xml

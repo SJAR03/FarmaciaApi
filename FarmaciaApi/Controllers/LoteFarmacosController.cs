@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using FarmaciaApi.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaApi.Controllers
 {
@@ -22,6 +23,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/LoteFarmacos
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LoteFarmaco>>> GetLoteFarmacos()
         {
@@ -29,6 +31,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/LoteFarmacos/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<LoteFarmaco>> GetLoteFarmaco(int id)
         {
@@ -44,6 +47,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/LoteFarmacos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLoteFarmaco(int id, LoteFarmaco loteFarmaco)
         {
@@ -75,6 +79,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/LoteFarmacos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<LoteFarmaco>> PostLoteFarmaco(LoteFarmaco loteFarmaco)
         {
@@ -85,6 +90,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/LoteFarmacos/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLoteFarmaco(int id)
         {
