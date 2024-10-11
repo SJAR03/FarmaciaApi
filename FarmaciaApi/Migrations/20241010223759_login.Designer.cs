@@ -4,6 +4,7 @@ using FarmaciaApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FarmaciaApi.Migrations
 {
     [DbContext(typeof(FarmaciaDbContext))]
-    partial class FarmaciaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241010223759_login")]
+    partial class login
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -548,11 +551,12 @@ namespace FarmaciaApi.Migrations
                         .HasColumnType("varchar(150)");
 
                     b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Pwd")
                         .IsRequired()
-                        .HasColumnType("varchar(max)");
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("Username")
                         .IsRequired()

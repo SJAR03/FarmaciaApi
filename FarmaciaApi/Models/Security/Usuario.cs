@@ -13,8 +13,10 @@ namespace FarmaciaApi.Models.Security
         public string Username { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(15)")]
+        [Column(TypeName = "varchar(max)")]
         public string Pwd { get; set; }
+
+        public byte[]? PasswordSalt { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(150)")]

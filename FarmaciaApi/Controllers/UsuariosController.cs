@@ -78,10 +78,28 @@ namespace FarmaciaApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
+
+            string passwordHash;
+            byte[] passwordSalt;
+            CreatePasswordHash(usuario.Pwd, out passwordHash, out passwordSalt);
+
+            usuario.Pwd = passwordHash;
+            usuario.PasswordSalt = passwordSalt;
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUsuario", new { id = usuario.IdUsuario }, usuario);
+        }
+
+        private void CreatePasswordHash(string password, out string passwordHash, out byte[] passwordSalt)
+        {
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                var hash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                passwordHash = Convert.ToBase64String(hash);
+            }
         }
 
         // DELETE: api/Usuarios/5
