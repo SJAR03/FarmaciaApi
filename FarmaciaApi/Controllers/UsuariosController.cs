@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models.Security;
 using FarmaciaApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaApi.Controllers
 {
@@ -22,6 +23,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Usuarios
+        /// <summary>
+        /// Return the info of all users
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">User info retrieved</response>
+        /// <response code="401">Not authorized</response>
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
