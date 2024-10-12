@@ -27,4 +27,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\Delete\" />
+    <Folder Include="DTOs\Get\" />
+    <Folder Include="DTOs\Update\" />
+  </ItemGroup>
+
 </Project>

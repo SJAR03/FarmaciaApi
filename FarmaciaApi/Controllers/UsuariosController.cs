@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models.Security;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -85,17 +86,23 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario(UsuarioCreate usuarioCreate)
         {
 
             string passwordHash;
             byte[] passwordSalt;
-            CreatePasswordHash(usuario.Pwd, out passwordHash, out passwordSalt);
+            CreatePasswordHash(usuarioCreate.Pwd, out passwordHash, out passwordSalt);
 
-            usuario.Pwd = passwordHash;
-            usuario.PasswordSalt = passwordSalt;
+            var usuario = new Usuario
+            {
+                Username = usuarioCreate.Username,
+                Pwd = passwordHash,
+                PasswordSalt = passwordSalt,
+                Nombre = usuarioCreate.Nombre,
+                Estado = 1
+            };            
 
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
