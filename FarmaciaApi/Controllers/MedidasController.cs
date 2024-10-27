@@ -22,7 +22,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Medidas
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Medidas>>> GetMedidas()
         {
@@ -30,7 +30,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Medidas/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Medidas>> GetMedidas(int id)
         {
@@ -46,7 +46,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Medidas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMedidas(int id, Medidas medidas)
         {
@@ -78,7 +78,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Medidas
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Medidas>> PostMedidas(Medidas medidas)
         {
@@ -89,7 +89,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Medidas/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMedidas(int id)
         {

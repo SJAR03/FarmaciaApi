@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
-using FarmaciaApi.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaApi.Controllers
@@ -23,7 +22,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Expedientes
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Expediente>>> GetExpedientes()
         {
@@ -31,7 +30,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Expedientes/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Expediente>> GetExpediente(int id)
         {
@@ -47,7 +46,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Expedientes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutExpediente(int id, Expediente expediente)
         {
@@ -79,7 +78,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Expedientes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Expediente>> PostExpediente(Expediente expediente)
         {
@@ -90,7 +89,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Expedientes/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteExpediente(int id)
         {

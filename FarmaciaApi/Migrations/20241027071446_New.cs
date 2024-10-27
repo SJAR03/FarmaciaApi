@@ -6,50 +6,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FarmaciaApi.Migrations
 {
     /// <inheritdoc />
-    public partial class modelFix : Migration
+    public partial class New : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ExpedienteView",
+                name: "Dosificaciones",
                 columns: table => new
                 {
-                    IdExpediente = table.Column<int>(type: "int", nullable: false),
-                    IdPaciente = table.Column<int>(type: "int", nullable: false),
-                    Nombres = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdDosificacion = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Estado = table.Column<int>(type: "int", nullable: false),
+                    IdUsuarioCreacion = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Notas = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IdUsuarioModificacion = table.Column<int>(type: "int", nullable: false),
+                    FechaModificacion = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "LoteFarmacosView",
-                columns: table => new
-                {
-                    IdLoteFarmaco = table.Column<int>(type: "int", nullable: false),
-                    NombreLoteFarmaco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DescripcionLoteFarmaco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Concentracion = table.Column<int>(type: "int", nullable: false),
-                    Cantidad = table.Column<int>(type: "int", nullable: false),
-                    IdPresentacion = table.Column<int>(type: "int", nullable: false),
-                    NombrePresentacion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DescripcionPresentacion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdMedidas = table.Column<int>(type: "int", nullable: false),
-                    NombreMedidas = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdDosificacion = table.Column<int>(type: "int", nullable: false),
-                    NombreDosificacion = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
+                    table.PrimaryKey("PK_Dosificaciones", x => x.IdDosificacion);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,58 +42,6 @@ namespace FarmaciaApi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Permisos", x => x.IdPermisos);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PrescripcionDetalleView",
-                columns: table => new
-                {
-                    IdPrescripcionDetalle = table.Column<int>(type: "int", nullable: false),
-                    IdLoteFarmaco = table.Column<int>(type: "int", nullable: false),
-                    IdPrescripcion = table.Column<int>(type: "int", nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Concentracion = table.Column<int>(type: "int", nullable: false),
-                    Cantidad = table.Column<int>(type: "int", nullable: false),
-                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Dosis = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Duracion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Instrucciones = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PrescripcionView",
-                columns: table => new
-                {
-                    IdExpediente = table.Column<int>(type: "int", nullable: false),
-                    IdPrescripcion = table.Column<int>(type: "int", nullable: false),
-                    Notas = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Dosis = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Duracion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Instrucciones = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PresentacionView",
-                columns: table => new
-                {
-                    IdPresentacion = table.Column<int>(type: "int", nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdDosificacion = table.Column<int>(type: "int", nullable: false),
-                    NombreDosificacion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdMedidas = table.Column<int>(type: "int", nullable: false),
-                    NombreMedidas = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
                 });
 
             migrationBuilder.CreateTable(
@@ -141,7 +66,8 @@ namespace FarmaciaApi.Migrations
                     IdUsuario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "varchar(30)", nullable: false),
-                    Pwd = table.Column<string>(type: "varchar(15)", nullable: false),
+                    Pwd = table.Column<string>(type: "varchar(max)", nullable: false),
+                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     Nombre = table.Column<string>(type: "varchar(150)", nullable: false),
                     Estado = table.Column<int>(type: "int", nullable: false)
                 },
@@ -195,36 +121,6 @@ namespace FarmaciaApi.Migrations
                     table.ForeignKey(
                         name: "FK_Auditorias_Usuarios_IdUsuario",
                         column: x => x.IdUsuario,
-                        principalTable: "Usuarios",
-                        principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Dosificaciones",
-                columns: table => new
-                {
-                    IdDosificacion = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    Estado = table.Column<int>(type: "int", nullable: false),
-                    IdUsuarioCreacion = table.Column<int>(type: "int", nullable: false),
-                    FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IdUsuarioModificacion = table.Column<int>(type: "int", nullable: true),
-                    FechaModificacion = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Dosificaciones", x => x.IdDosificacion);
-                    table.ForeignKey(
-                        name: "FK_Dosificaciones_Usuarios_IdUsuarioCreacion",
-                        column: x => x.IdUsuarioCreacion,
-                        principalTable: "Usuarios",
-                        principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Dosificaciones_Usuarios_IdUsuarioModificacion",
-                        column: x => x.IdUsuarioModificacion,
                         principalTable: "Usuarios",
                         principalColumn: "IdUsuario",
                         onDelete: ReferentialAction.Restrict);
@@ -529,7 +425,7 @@ namespace FarmaciaApi.Migrations
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     Estado = table.Column<int>(type: "int", nullable: false),
                     IdPrescripcion = table.Column<int>(type: "int", nullable: false),
-                    IdLoteFarmaco = table.Column<int>(type: "int", nullable: false),
+                    IdFarmacoPresentacion = table.Column<int>(type: "int", nullable: false),
                     IdUsuarioCreacion = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdUsuarioModificacion = table.Column<int>(type: "int", nullable: true),
@@ -539,10 +435,10 @@ namespace FarmaciaApi.Migrations
                 {
                     table.PrimaryKey("PK_PrescripcionDetalles", x => x.IdPrescripcionDetalle);
                     table.ForeignKey(
-                        name: "FK_PrescripcionDetalles_LoteFarmacos_IdLoteFarmaco",
-                        column: x => x.IdLoteFarmaco,
-                        principalTable: "LoteFarmacos",
-                        principalColumn: "IdLoteFarmaco",
+                        name: "FK_PrescripcionDetalles_LoteFarmacoDetalles_IdFarmacoPresentacion",
+                        column: x => x.IdFarmacoPresentacion,
+                        principalTable: "LoteFarmacoDetalles",
+                        principalColumn: "IdLoteFarmacoDetalles",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PrescripcionDetalles_Prescripciones_IdPrescripcion",
@@ -568,16 +464,6 @@ namespace FarmaciaApi.Migrations
                 name: "IX_Auditorias_IdUsuario",
                 table: "Auditorias",
                 column: "IdUsuario");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Dosificaciones_IdUsuarioCreacion",
-                table: "Dosificaciones",
-                column: "IdUsuarioCreacion");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Dosificaciones_IdUsuarioModificacion",
-                table: "Dosificaciones",
-                column: "IdUsuarioModificacion");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Expedientes_IdPaciente",
@@ -655,9 +541,9 @@ namespace FarmaciaApi.Migrations
                 column: "IdRol");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PrescripcionDetalles_IdLoteFarmaco",
+                name: "IX_PrescripcionDetalles_IdFarmacoPresentacion",
                 table: "PrescripcionDetalles",
-                column: "IdLoteFarmaco");
+                column: "IdFarmacoPresentacion");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PrescripcionDetalles_IdPrescripcion",
@@ -727,40 +613,19 @@ namespace FarmaciaApi.Migrations
                 name: "Auditorias");
 
             migrationBuilder.DropTable(
-                name: "ExpedienteView");
-
-            migrationBuilder.DropTable(
-                name: "LoteFarmacoDetalles");
-
-            migrationBuilder.DropTable(
-                name: "LoteFarmacosView");
-
-            migrationBuilder.DropTable(
                 name: "PermisosRoles");
 
             migrationBuilder.DropTable(
                 name: "PrescripcionDetalles");
 
             migrationBuilder.DropTable(
-                name: "PrescripcionDetalleView");
-
-            migrationBuilder.DropTable(
-                name: "PrescripcionView");
-
-            migrationBuilder.DropTable(
-                name: "PresentacionView");
-
-            migrationBuilder.DropTable(
                 name: "UsuarioRoles");
-
-            migrationBuilder.DropTable(
-                name: "Presentaciones");
 
             migrationBuilder.DropTable(
                 name: "Permisos");
 
             migrationBuilder.DropTable(
-                name: "LoteFarmacos");
+                name: "LoteFarmacoDetalles");
 
             migrationBuilder.DropTable(
                 name: "Prescripciones");
@@ -769,13 +634,19 @@ namespace FarmaciaApi.Migrations
                 name: "Roles");
 
             migrationBuilder.DropTable(
+                name: "LoteFarmacos");
+
+            migrationBuilder.DropTable(
+                name: "Presentaciones");
+
+            migrationBuilder.DropTable(
+                name: "Expedientes");
+
+            migrationBuilder.DropTable(
                 name: "Dosificaciones");
 
             migrationBuilder.DropTable(
                 name: "Medidas");
-
-            migrationBuilder.DropTable(
-                name: "Expedientes");
 
             migrationBuilder.DropTable(
                 name: "Pacientes");

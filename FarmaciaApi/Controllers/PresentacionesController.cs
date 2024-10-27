@@ -22,7 +22,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Presentaciones
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Presentacion>>> GetPresentaciones()
         {
@@ -30,7 +30,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Presentaciones/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
         {
@@ -46,7 +46,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Presentaciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPresentacion(int id, Presentacion presentacion)
         {
@@ -78,7 +78,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Presentaciones
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Presentacion>> PostPresentacion(Presentacion presentacion)
         {
@@ -89,7 +89,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Presentaciones/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePresentacion(int id)
         {

@@ -22,7 +22,7 @@ namespace FarmaciaApi.Controllers
             _pacienteService = pacienteService;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes()
         {
@@ -30,7 +30,7 @@ namespace FarmaciaApi.Controllers
             return Ok(pacientes);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Paciente>> GetPaciente(int id)
         {
@@ -44,7 +44,7 @@ namespace FarmaciaApi.Controllers
             return Ok(paciente);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
         {
@@ -52,7 +52,7 @@ namespace FarmaciaApi.Controllers
             return CreatedAtAction(nameof(GetPaciente), new { id = paciente.IdPaciente }, paciente);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPaciente(int id, Paciente paciente)
         {
@@ -65,7 +65,7 @@ namespace FarmaciaApi.Controllers
             return NoContent();
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePaciente(int id)
         {

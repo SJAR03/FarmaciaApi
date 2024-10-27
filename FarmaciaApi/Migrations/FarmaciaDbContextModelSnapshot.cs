@@ -17,7 +17,7 @@ namespace FarmaciaApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -43,6 +43,7 @@ namespace FarmaciaApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("IdUsuarioModificacion")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
@@ -50,10 +51,6 @@ namespace FarmaciaApi.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("IdDosificacion");
-
-                    b.HasIndex("IdUsuarioCreacion");
-
-                    b.HasIndex("IdUsuarioModificacion");
 
                     b.ToTable("Dosificaciones");
                 });
@@ -587,24 +584,6 @@ namespace FarmaciaApi.Migrations
                     b.HasIndex("IdUsuario");
 
                     b.ToTable("UsuarioRoles");
-                });
-
-            modelBuilder.Entity("FarmaciaApi.Models.Dosificacion", b =>
-                {
-                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioCreacion")
-                        .WithMany()
-                        .HasForeignKey("IdUsuarioCreacion")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioModificacion")
-                        .WithMany()
-                        .HasForeignKey("IdUsuarioModificacion")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("UsuarioCreacion");
-
-                    b.Navigation("UsuarioModificacion");
                 });
 
             modelBuilder.Entity("FarmaciaApi.Models.Expediente", b =>

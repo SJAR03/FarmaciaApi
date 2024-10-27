@@ -23,7 +23,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Auditorias
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Auditoria>>> GetAuditorias()
         {
@@ -31,7 +31,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Auditorias/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Auditoria>> GetAuditoria(int id)
         {
@@ -47,7 +47,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Auditorias/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAuditoria(int id, Auditoria auditoria)
         {
@@ -79,7 +79,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Auditorias
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Auditoria>> PostAuditoria(Auditoria auditoria)
         {
@@ -90,7 +90,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Auditorias/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuditoria(int id)
         {

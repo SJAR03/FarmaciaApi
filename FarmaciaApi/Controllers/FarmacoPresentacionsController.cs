@@ -22,7 +22,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/FarmacoPresentacions
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FarmacoPresentacion>>> GetLoteFarmacoDetalles()
         {
@@ -30,7 +30,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/FarmacoPresentacions/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<FarmacoPresentacion>> GetFarmacoPresentacion(int id)
         {
@@ -46,7 +46,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/FarmacoPresentacions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFarmacoPresentacion(int id, FarmacoPresentacion farmacoPresentacion)
         {
@@ -78,7 +78,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/FarmacoPresentacions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<FarmacoPresentacion>> PostFarmacoPresentacion(FarmacoPresentacion farmacoPresentacion)
         {
@@ -89,7 +89,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/FarmacoPresentacions/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFarmacoPresentacion(int id)
         {

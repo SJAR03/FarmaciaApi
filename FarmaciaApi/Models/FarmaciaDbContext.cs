@@ -1,5 +1,4 @@
 ﻿using FarmaciaApi.Models.Security;
-using FarmaciaApi.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -10,21 +9,6 @@ namespace FarmaciaApi.Models
     {
         public FarmaciaDbContext(DbContextOptions<FarmaciaDbContext> options) : base(options)
         {
-            var dbCreater = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
-            if(dbCreater != null)
-            {
-                // Create the database if it doesn't exist
-                if(!dbCreater.CanConnect())
-                {
-                    dbCreater.Create();
-                }
-
-                // Create the tables if they don't exist
-                if(!dbCreater.HasTables())
-                {
-                    dbCreater.CreateTables();
-                }
-            }
         }
 
         //Security
@@ -246,18 +230,17 @@ namespace FarmaciaApi.Models
                 .HasForeignKey(e => e.IdUsuarioModificacion)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Dosificacion
-            modelBuilder.Entity<Dosificacion>()
-                .HasOne(e => e.UsuarioCreacion)
-                .WithMany()
-                .HasForeignKey(e => e.IdUsuarioCreacion)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Dosificacion>()
+            //    .HasOne(e => e.UsuarioCreacion)
+            //    .WithMany()
+            //    .HasForeignKey(e => e.IdUsuarioCreacion)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Dosificacion>()
-                .HasOne(e => e.UsuarioModificacion)
-                .WithMany()
-                .HasForeignKey(e => e.IdUsuarioModificacion)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Dosificacion>()
+            //    .HasOne(e => e.UsuarioModificacion)
+            //    .WithMany()
+            //    .HasForeignKey(e => e.IdUsuarioModificacion)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             // Views
             //modelBuilder.Entity<PresentacionView>().HasNoKey();

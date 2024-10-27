@@ -30,7 +30,7 @@ namespace FarmaciaApi.Controllers
         /// <remarks>Remeber authorize</remarks>
         /// <response code="200">User info retrieved</response>
         /// <response code="401">Not authorized</response>
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
@@ -38,7 +38,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Usuarios/5
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -54,7 +54,7 @@ namespace FarmaciaApi.Controllers
 
         // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -86,7 +86,7 @@ namespace FarmaciaApi.Controllers
 
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[Authorize]
+        ////[Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(UsuarioCreate usuarioCreate)
         {
@@ -121,7 +121,7 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Usuarios/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {

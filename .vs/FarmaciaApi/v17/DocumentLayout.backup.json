@@ -1,34 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\",
+  "WorkspaceRootPath": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Migrations\\20241027071446_New.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FarmaciaApi\\Migrations\\20241027071446_New.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\models\\dosificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\models\\dosificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\models\\security\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\models\\security\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\models\\farmaciadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\models\\farmaciadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\controllers\\dosificacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\controllers\\dosificacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\farmaciaapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\repositories\\dosificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\repositories\\dosificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\repositories\\interfaces\\idosificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\repositories\\interfaces\\idosificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\services\\interfaces\\idosificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\services\\interfaces\\idosificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\services\\dosificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\services\\dosificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\dtos\\create\\dosificacioncreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dtos\\create\\dosificacioncreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\dtos\\update\\dosificacionupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\dtos\\update\\dosificacionupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3767203-ED1F-4B64-B226-6AD0C7440F30}|FarmaciaApi\\FarmaciaApi.csproj|solutionrelative:farmaciaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,100 +62,179 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\DTOs\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\DTOs\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\DTOs\\LoginDTO.cs",
-              "RelativeToolTip": "FarmaciaApi\\DTOs\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20241027071446_New.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Migrations\\20241027071446_New.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Migrations\\20241027071446_New.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Migrations\\20241027071446_New.cs",
+              "RelativeToolTip": "FarmaciaApi\\Migrations\\20241027071446_New.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T19:52:47.092Z"
+              "WhenOpened": "2024-10-27T07:14:47.082Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "FarmaciaApi\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAswIoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IDosificacionService.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Services\\Interfaces\\IDosificacionService.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Services\\Interfaces\\IDosificacionService.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Services\\Interfaces\\IDosificacionService.cs",
+              "RelativeToolTip": "FarmaciaApi\\Services\\Interfaces\\IDosificacionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T19:52:36.126Z",
+              "WhenOpened": "2024-10-27T06:09:32.53Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Program.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Program.cs",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Program.cs",
-              "RelativeToolTip": "FarmaciaApi\\Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAACEAAAAiAAAAAAAAAA==",
+              "Title": "DosificacionRepository.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Repositories\\DosificacionRepository.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Repositories\\DosificacionRepository.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Repositories\\DosificacionRepository.cs",
+              "RelativeToolTip": "FarmaciaApi\\Repositories\\DosificacionRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBkAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T17:12:30.706Z"
+              "WhenOpened": "2024-10-27T06:00:43.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "FarmaciaApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAADQAAAAAAAAAAAAIwEQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-11T16:57:52.466Z"
+              "Title": "IDosificacionRepository.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Repositories\\Interfaces\\IDosificacionRepository.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Repositories\\Interfaces\\IDosificacionRepository.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Repositories\\Interfaces\\IDosificacionRepository.cs",
+              "RelativeToolTip": "FarmaciaApi\\Repositories\\Interfaces\\IDosificacionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T06:00:16.536Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "FarmaciaApi\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAwwEoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "DosificacionCreateDTO.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\DTOs\\Create\\DosificacionCreateDTO.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\DTOs\\Create\\DosificacionCreateDTO.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\DTOs\\Create\\DosificacionCreateDTO.cs",
+              "RelativeToolTip": "FarmaciaApi\\DTOs\\Create\\DosificacionCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:21:11.959Z"
+              "WhenOpened": "2024-10-27T05:48:22.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Models\\Security\\Usuario.cs",
-              "RelativeDocumentMoniker": "FarmaciaApi\\Models\\Security\\Usuario.cs",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\Models\\Security\\Usuario.cs",
-              "RelativeToolTip": "FarmaciaApi\\Models\\Security\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "FarmaciaDbContext.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\FarmaciaDbContext.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Models\\FarmaciaDbContext.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\FarmaciaDbContext.cs",
+              "RelativeToolTip": "FarmaciaApi\\Models\\FarmaciaDbContext.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAQwOwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:13:20.806Z"
+              "WhenOpened": "2024-10-27T05:54:38.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DosificacionesController.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "RelativeToolTip": "FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T05:49:43.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DosificacionUpdateDTO.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\DTOs\\Update\\DosificacionUpdateDTO.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\DTOs\\Update\\DosificacionUpdateDTO.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\DTOs\\Update\\DosificacionUpdateDTO.cs",
+              "RelativeToolTip": "FarmaciaApi\\DTOs\\Update\\DosificacionUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T06:19:21.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dosificacion.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Dosificacion.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Models\\Dosificacion.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Models\\Dosificacion.cs",
+              "RelativeToolTip": "FarmaciaApi\\Models\\Dosificacion.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T23:00:01.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DosificacionService.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Services\\DosificacionService.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Services\\DosificacionService.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Services\\DosificacionService.cs",
+              "RelativeToolTip": "FarmaciaApi\\Services\\DosificacionService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAYwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T06:12:26.867Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
+              "RelativeDocumentMoniker": "FarmaciaApi\\Program.cs",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\Program.cs",
+              "RelativeToolTip": "FarmaciaApi\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T06:26:44.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
               "RelativeDocumentMoniker": "FarmaciaApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.json",
               "RelativeToolTip": "FarmaciaApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-10T21:54:00.187Z"
+              "WhenOpened": "2024-10-27T01:04:04.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "FarmaciaApi\\appsettings.Development.json",
+              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\FarmaciaApi\\appsettings.Development.json",
+              "RelativeToolTip": "FarmaciaApi\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-22T03:25:11.801Z",
+              "EditorCaption": ""
             }
           ]
         }

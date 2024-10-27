@@ -66,8 +66,13 @@ builder.Services.AddDbContext<FarmaciaDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("FarmaciaConnection")));
 
 // Register services
+//Repositories
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
+builder.Services.AddScoped<IDosificacionRepository, DosificacionRepository>();
+
+//Services
 builder.Services.AddScoped<IPacienteService, PacienteService>();
+builder.Services.AddScoped<IDosificacionService, DosificacionService>();
 
 
 builder.Services.AddAuthentication(options =>
