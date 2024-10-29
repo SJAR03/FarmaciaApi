@@ -21,9 +21,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore FarmaciaApi/FarmaciaApi.csproj
+      run: dotnet restore FarmaciaApi.csproj
     - name: Build
-      run: dotnet build FarmaciaApi/FarmaciaApi.csproj --configuration Release --no-restore
+      run: dotnet build FarmaciaApi.csproj --configuration Release --no-restore
       #run: dotnet build --no-restore
     #- name: Test
       #run: dotnet test --no-build --verbosity normal
