@@ -21,7 +21,8 @@ namespace FarmaciaApi.Models
         public int IdUsuarioCreacion { get; set; } // llave foranea
 
         // propiedad de navegacion para el usuario que creo el registro
-        [ForeignKey("IdUsuarioCreacion")]
+        //[ForeignKey("IdUsuarioCreacion")]
+        [NotMapped]
         public Usuario UsuarioCreacion { get; set; } // propiedad de navegacion
 
         [Required]
@@ -31,7 +32,8 @@ namespace FarmaciaApi.Models
         public int? IdUsuarioModificacion { get; set; } // llave foranea
 
         // propiedad de navegacion para el usuario que modifico el registro
-        [ForeignKey("IdUsuarioModificacion")]
+        //[ForeignKey("IdUsuarioModificacion")]
+        [NotMapped]
         public Usuario? UsuarioModificacion { get; set; } // propiedad de navegacion
 
         public DateTime? FechaModificacion { get; set; }

@@ -1,10 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\",
+  "WorkspaceRootPath": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\models\\medidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:models\\medidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\models\\dosificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:models\\dosificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\controllers\\medidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:controllers\\medidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\controllers\\dosificacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:controllers\\dosificacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\users\\sayerdis\\documents\\dev\\prueba\\farmaciaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +34,100 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MedidasController.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\MedidasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MedidasController.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\MedidasController.cs",
+              "RelativeToolTip": "Controllers\\MedidasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:57:30.724Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-29T05:38:19.619Z",
+              "Title": "Medidas.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Models\\Medidas.cs",
+              "RelativeDocumentMoniker": "Models\\Medidas.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Models\\Medidas.cs",
+              "RelativeToolTip": "Models\\Medidas.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwB4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:51:16.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dosificacion.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Models\\Dosificacion.cs",
+              "RelativeDocumentMoniker": "Models\\Dosificacion.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Models\\Dosificacion.cs",
+              "RelativeToolTip": "Models\\Dosificacion.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvx0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:51:13.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DosificacionesController.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DosificacionesController.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\DosificacionesController.cs",
+              "RelativeToolTip": "Controllers\\DosificacionesController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwGIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:52:31.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAkwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:46:10.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\sayerdis\\Documents\\Dev\\Prueba\\FarmaciaApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:45:46.952Z",
               "EditorCaption": ""
             }
           ]

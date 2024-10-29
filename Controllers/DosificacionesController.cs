@@ -26,6 +26,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Dosificaciones
+        /// <summary>
+        /// Return the info of all dosages
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">Dosages info retrieved</response>
+        /// <response code="401">Not authorized</response>
+        /// <response code="500">Upsi, internal error</response>
         //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dosificacion>>> GetDosificaciones()
@@ -35,6 +42,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // GET: api/Dosificaciones/5
+        /// <summary>
+        /// Return the info of specific dosage by id
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">Dosages info retrieved</response>
+        /// <response code="401">Not authorized</response>
+        /// <response code="500">Upsi, internal error</response>
         //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Dosificacion>> GetDosificacion(int id)
@@ -50,7 +64,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // PUT: api/Dosificaciones/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Update the info of specific dosage by id
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">Dosage info updated</response>
+        /// <response code="401">Not authorized</response>
+        /// <response code="500">Upsi, internal error</response>
         //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDosificacion(int id, DosificacionUpdateDTO dto)
@@ -65,7 +85,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // POST: api/Dosificaciones
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Create new dosage object
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">Dosage created successfully</response>
+        /// <response code="401">Not authorized</response>
+        /// <response code="500">Upsi, internal error</response>
         //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Dosificacion>> PostDosificacion(DosificacionCreateDTO dto)
@@ -75,6 +101,13 @@ namespace FarmaciaApi.Controllers
         }
 
         // DELETE: api/Dosificaciones/5
+        /// <summary>
+        /// Delete dosage object by id
+        /// </summary>
+        /// <remarks>Remeber authorize</remarks>
+        /// <response code="200">Dosage deleted successfully</response>
+        /// <response code="401">Not authorized</response>
+        /// <response code="500">Upsi, internal error</response>
         //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDosificacion(int id)

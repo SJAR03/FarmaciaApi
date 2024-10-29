@@ -14,7 +14,7 @@ namespace FarmaciaApi.Models
         public required string Nombre { get; set; }
 
         [Required]
-        public int Estado { get; set; }
+        public int Estado { get; set; } = 1;
 
         // llave foranea para el usuario que creo el registro
         [Required]
