@@ -230,17 +230,17 @@ namespace FarmaciaApi.Models
                 .HasForeignKey(e => e.IdUsuarioModificacion)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //modelBuilder.Entity<Dosificacion>()
-            //    .HasOne(e => e.UsuarioCreacion)
-            //    .WithMany()
-            //    .HasForeignKey(e => e.IdUsuarioCreacion)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Dosificacion>()
+                .HasOne(e => e.UsuarioCreacion)
+                .WithMany()
+                .HasForeignKey(e => e.IdUsuarioCreacion)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            //modelBuilder.Entity<Dosificacion>()
-            //    .HasOne(e => e.UsuarioModificacion)
-            //    .WithMany()
-            //    .HasForeignKey(e => e.IdUsuarioModificacion)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Dosificacion>()
+                .HasOne(e => e.UsuarioModificacion)
+                .WithMany()
+                .HasForeignKey(e => e.IdUsuarioModificacion)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Views
             //modelBuilder.Entity<PresentacionView>().HasNoKey();

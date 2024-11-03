@@ -4,6 +4,7 @@ using FarmaciaApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FarmaciaApi.Migrations
 {
     [DbContext(typeof(FarmaciaDbContext))]
-    partial class FarmaciaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241103041014_medidas")]
+    partial class medidas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -594,13 +597,12 @@ namespace FarmaciaApi.Migrations
                     b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioCreacion")
                         .WithMany()
                         .HasForeignKey("IdUsuarioCreacion")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FarmaciaApi.Models.Security.Usuario", "UsuarioModificacion")
                         .WithMany()
-                        .HasForeignKey("IdUsuarioModificacion")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("IdUsuarioModificacion");
 
                     b.Navigation("UsuarioCreacion");
 
