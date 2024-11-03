@@ -39,7 +39,7 @@ namespace FarmaciaApi.Controllers
         {
             var dosificaciones = await _service.GetDosificaciones();
 
-            if (dosificaciones == null || dosificaciones.Any())
+            if (dosificaciones == null || !dosificaciones.Any())
             {
                 return NotFound("No existen dosificaciones");
             }
