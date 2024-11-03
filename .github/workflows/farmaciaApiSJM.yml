@@ -48,6 +48,5 @@ jobs:
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
     - name: Run EF migrations
       run: |
-          dotnet tool install --global dotnet-ef
-          dotnet tool restore
-          dotnet ef database update --project "${{ env.WORKING_DIRECTORY }}"
+          cd "${{ env.WORKING_DIRECTORY }}"
+          dotnet ef database update
