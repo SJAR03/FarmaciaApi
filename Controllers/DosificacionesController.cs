@@ -38,6 +38,12 @@ namespace FarmaciaApi.Controllers
         public async Task<ActionResult<IEnumerable<Dosificacion>>> GetDosificaciones()
         {
             var dosificaciones = await _service.GetDosificaciones();
+
+            if (dosificaciones == null || dosificaciones.Any())
+            {
+                return NotFound("No existen dosificaciones");
+            }
+
             return Ok(dosificaciones);
         }
 
@@ -57,7 +63,7 @@ namespace FarmaciaApi.Controllers
 
             if (dosificacion == null)
             {
-                return NotFound();
+                return NotFound("No existe la dosificación con ese id");
             }
 
             return Ok(dosificacion);
@@ -77,7 +83,7 @@ namespace FarmaciaApi.Controllers
         {
             if (id <= 0)
             {
-                return BadRequest();
+                return BadRequest("No fue posible actualizar la dosificación");
             }
 
             await _service.UpdateDosificacion(id, dto);
