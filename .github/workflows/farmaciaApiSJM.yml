@@ -46,8 +46,3 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.farmaciaApiSJM_4D8F }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    - name: Run EF migrations
-      run: |
-          dotnet tool install --global dotnet-ef
-          dotnet tool restore
-          dotnet ef database update --connection '${{ secrets.DBConnection }}'
