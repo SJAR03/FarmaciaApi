@@ -48,5 +48,6 @@ jobs:
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
     - name: Run EF migrations
       run: |
-          cd "${{ env.WORKING_DIRECTORY }}"
-          dotnet ef database update
+          dotnet tool install --global dotnet-ef
+          dotnet tool restore
+          dotnet ef database update -p FarmaciaApi --connection '${{ secrets.DBConnection }}'

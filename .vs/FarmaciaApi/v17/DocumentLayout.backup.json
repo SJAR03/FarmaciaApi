@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\models\\farmaciadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:models\\farmaciadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Migrations\\20241103041014_medidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241103041014_medidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\.github\\workflows\\farmaciaApiSJM.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\workflows\\farmaciaApiSJM.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|c:\\dev\\asp-net-core\\ultimo\\farmaciaapi\\dtos\\update\\medidasupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43D090F2-A045-41EB-975C-7B3F92BD0ED0}|FarmaciaApi.csproj|solutionrelative:dtos\\update\\medidasupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -94,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,46 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FarmaciaDbContext.cs",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Models\\FarmaciaDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\FarmaciaDbContext.cs",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Models\\FarmaciaDbContext.cs",
-              "RelativeToolTip": "Models\\FarmaciaDbContext.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAAAQwPIAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T04:10:24.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20241103041014_medidas.cs",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Migrations\\20241103041014_medidas.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241103041014_medidas.cs",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Migrations\\20241103041014_medidas.cs",
-              "RelativeToolTip": "Migrations\\20241103041014_medidas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T04:10:14.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "farmaciaApiSJM.yml",
-              "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\.github\\workflows\\farmaciaApiSJM.yml",
-              "RelativeDocumentMoniker": ".github\\workflows\\farmaciaApiSJM.yml",
-              "ToolTip": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\.github\\workflows\\farmaciaApiSJM.yml",
-              "RelativeToolTip": ".github\\workflows\\farmaciaApiSJM.yml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwDMAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-11-03T03:58:57.045Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ExpedienteCreateDTO.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\DTOs\\Create\\ExpedienteCreateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Create\\ExpedienteCreateDTO.cs",
@@ -154,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "DosificacionCreateDTO.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\DTOs\\Create\\DosificacionCreateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Create\\DosificacionCreateDTO.cs",
@@ -167,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MedidasUpdateDTO.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\DTOs\\Update\\MedidasUpdateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Update\\MedidasUpdateDTO.cs",
@@ -180,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DosificacionUpdateDTO.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\DTOs\\Update\\DosificacionUpdateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Update\\DosificacionUpdateDTO.cs",
@@ -193,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -206,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "DosificacionService.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Services\\DosificacionService.cs",
               "RelativeDocumentMoniker": "Services\\DosificacionService.cs",
@@ -219,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "MedidasService.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Services\\MedidasService.cs",
               "RelativeDocumentMoniker": "Services\\MedidasService.cs",
@@ -232,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "IDosificacionService.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Services\\Interfaces\\IDosificacionService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IDosificacionService.cs",
@@ -245,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "IMedidasService.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Services\\Interfaces\\IMedidasService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IMedidasService.cs",
@@ -258,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 16,
               "Title": "DosificacionRepository.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Repositories\\DosificacionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\DosificacionRepository.cs",
@@ -271,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "MedidasRepository.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Repositories\\MedidasRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\MedidasRepository.cs",
@@ -284,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "IDosificacionRepository.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Repositories\\Interfaces\\IDosificacionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IDosificacionRepository.cs",
@@ -297,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "IMedidasRepository.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Repositories\\Interfaces\\IMedidasRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IMedidasRepository.cs",
@@ -310,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "MedidasCreateDTO.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\DTOs\\Create\\MedidasCreateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Create\\MedidasCreateDTO.cs",
@@ -323,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "DosificacionesController.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Controllers\\DosificacionesController.cs",
               "RelativeDocumentMoniker": "Controllers\\DosificacionesController.cs",
@@ -336,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "MedidasController.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Controllers\\MedidasController.cs",
               "RelativeDocumentMoniker": "Controllers\\MedidasController.cs",
@@ -349,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "Medidas.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Models\\Medidas.cs",
               "RelativeDocumentMoniker": "Models\\Medidas.cs",
@@ -362,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "Dosificacion.cs",
               "DocumentMoniker": "C:\\dev\\asp-net-core\\ultimo\\FarmaciaApi\\Models\\Dosificacion.cs",
               "RelativeDocumentMoniker": "Models\\Dosificacion.cs",
