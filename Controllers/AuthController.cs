@@ -38,7 +38,7 @@ namespace FarmaciaApi.Controllers
 
             var token = GenerateJwtToken(user);
 
-            return Ok(new { token });
+            return Ok(new { token, id = user.IdUsuario });
         }
 
         private string GenerateJwtToken(Usuario user)
