@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -48,12 +50,8 @@ namespace FarmaciaApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPrescripcionDetalle(int id, PrescripcionDetalle prescripcionDetalle)
+        public async Task<IActionResult> PutPrescripcionDetalle(int id, PrescripcionDetalleUpdateDTO prescripcionDetalle)
         {
-            if (id != prescripcionDetalle.IdPrescripcionDetalle)
-            {
-                return BadRequest("Invalid request. The provided id does not match the id in the object.");
-            }
 
             PrescripcionDetalle existingPrescripcionDetalle = await _context.PrescripcionDetalles.FindAsync(id);
 
@@ -62,7 +60,10 @@ namespace FarmaciaApi.Controllers
                 return NotFound("The specified prescription detail was not found.");
             }
 
-            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(existingPrescripcionDetalle.IdFarmacoPresentacion);
+            FarmacoPresentacion farmacoPresentacion = await _context.LoteFarmacoDetalles.FindAsync(prescripcionDetalle.IdFarmacoPresentacion);
+            var idLoteFarmaco = farmacoPresentacion.IdLoteFarmaco;
+
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(idLoteFarmaco);
 
             if (loteFarmaco == null)
             {
@@ -92,11 +93,15 @@ namespace FarmaciaApi.Controllers
 
             // Actualizar la cantidad en el detalle de prescripción
             existingPrescripcionDetalle.Cantidad = prescripcionDetalle.Cantidad;
+            existingPrescripcionDetalle.Estado = prescripcionDetalle.Estado;
+            existingPrescripcionDetalle.IdPrescripcion = prescripcionDetalle.IdPrescripcion;
+            existingPrescripcionDetalle.IdFarmacoPresentacion = prescripcionDetalle.IdFarmacoPresentacion;
+            existingPrescripcionDetalle.IdUsuarioModificacion = prescripcionDetalle.IdUsuarioModificacion;
+            existingPrescripcionDetalle.FechaModificacion = prescripcionDetalle.FechaModificacion;
 
             try
             {
                 await _context.SaveChangesAsync();
-                return NoContent();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -109,27 +114,44 @@ namespace FarmaciaApi.Controllers
                     throw;
                 }
             }
+            return Ok(existingPrescripcionDetalle);
+
         }
 
         // POST: api/PrescripcionDetalles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<PrescripcionDetalle>> PostPrescripcionDetalle(PrescripcionDetalle prescripcionDetalle)
+        public async Task<ActionResult<PrescripcionDetalle>> PostPrescripcionDetalle(PrescripcionDetalleCreateDTO prescripcionDetalle)
         {
-            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(prescripcionDetalle.IdFarmacoPresentacion);
+            FarmacoPresentacion farmacoPresentacion = await _context.LoteFarmacoDetalles.FindAsync(prescripcionDetalle.IdFarmacoPresentacion);
+            var idLoteFarmaco = farmacoPresentacion.IdLoteFarmaco;
+
+            LoteFarmaco loteFarmaco = await _context.LoteFarmacos.FindAsync(idLoteFarmaco);
 
             if (loteFarmaco == null || loteFarmaco.Cantidad < prescripcionDetalle.Cantidad)
             {
                 return BadRequest("Cantidad insufiente en el lote de farmacos");
             }
 
+            var prescripcionDetalleObj = new PrescripcionDetalle
+            {
+                Cantidad = prescripcionDetalle.Cantidad,
+                Estado = prescripcionDetalle.Estado,
+                IdPrescripcion = prescripcionDetalle.IdPrescripcion,
+                IdFarmacoPresentacion = prescripcionDetalle.IdFarmacoPresentacion,
+                IdUsuarioCreacion = prescripcionDetalle.IdUsuarioCreacion,
+                FechaCreacion = prescripcionDetalle.FechaCreacion,
+                IdUsuarioModificacion = prescripcionDetalle.IdUsuarioModificacion,
+                FechaModificacion = prescripcionDetalle.FechaModificacion
+            };
+
             loteFarmaco.Cantidad -= prescripcionDetalle.Cantidad;
 
-            _context.PrescripcionDetalles.Add(prescripcionDetalle);
+            _context.PrescripcionDetalles.Add(prescripcionDetalleObj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPrescripcionDetalle", new { id = prescripcionDetalle.IdPrescripcionDetalle }, prescripcionDetalle);
+            return CreatedAtAction("GetPrescripcionDetalle", new { id = prescripcionDetalleObj.IdPrescripcionDetalle }, prescripcionDetalleObj);
         }
 
 
@@ -147,7 +169,7 @@ namespace FarmaciaApi.Controllers
             _context.PrescripcionDetalles.Remove(prescripcionDetalle);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool PrescripcionDetalleExists(int id)

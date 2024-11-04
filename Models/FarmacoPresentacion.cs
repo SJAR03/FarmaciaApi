@@ -17,12 +17,14 @@ namespace FarmaciaApi.Models
         public int IdLoteFarmaco { get; set; } // llave foranea
 
         [ForeignKey("IdLoteFarmaco")]
+        [JsonIgnore]
         public LoteFarmaco LoteFarmaco { get; set; } // propiedad de navegacion
 
         [Required]
         public int IdPresentacion { get; set; } // llave foranea
 
         [ForeignKey("IdPresentacion")]
+        [JsonIgnore]
         public Presentacion Presentacion { get; set; } // propiedad de navegacion
 
         // llave foranea para el usuario que creo el registro

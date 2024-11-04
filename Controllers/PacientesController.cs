@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using FarmaciaApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Create;
+using FarmaciaApi.DTOs.Update;
 
 namespace FarmaciaApi.Controllers
 {
@@ -27,6 +29,12 @@ namespace FarmaciaApi.Controllers
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes()
         {
             var pacientes = await _pacienteService.GetAllPacientesAsync();
+
+            if (pacientes == null || !pacientes.Any())
+            {
+                return NotFound("No existen pacientes");
+            }
+
             return Ok(pacientes);
         }
 
@@ -38,7 +46,7 @@ namespace FarmaciaApi.Controllers
 
             if (paciente == null)
             {
-                return NotFound();
+                return NotFound("No existe paciente con ese id");
             }
 
             return Ok(paciente);
@@ -46,37 +54,31 @@ namespace FarmaciaApi.Controllers
 
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
+        public async Task<ActionResult<Paciente>> PostPaciente(PacienteCreateDTO dto)
         {
-            await _pacienteService.AddPacienteAsync(paciente);
-            return CreatedAtAction(nameof(GetPaciente), new { id = paciente.IdPaciente }, paciente);
+            var createdPaciente = await _pacienteService.AddPacienteAsync(dto);
+            return CreatedAtAction(nameof(GetPaciente), new { id = createdPaciente.IdPaciente }, createdPaciente);
         }
 
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPaciente(int id, Paciente paciente)
+        public async Task<IActionResult> PutPaciente(int id, PacienteUpdateDTO dto)
         {
-            if (id != paciente.IdPaciente)
+            if (id <= 0)
             {
-                return BadRequest();
+                return BadRequest("No fue posible actualizar el paciente");
             }
 
-            await _pacienteService.UpdatePacienteAsync(id, paciente);
-            return NoContent();
+            await _pacienteService.UpdatePacienteAsync(id, dto);
+            return Ok("Paciente actualizado correctamente");
         }
 
         //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePaciente(int id)
         {
-            var pacienteExists = await _pacienteService.PacienteExistsAsync(id);
-            if (!pacienteExists)
-            {
-                return NotFound();
-            }
-
             await _pacienteService.DeletePacienteAsync(id);
-            return NoContent();
+            return Ok("Paciente eliminado correctamente");
         }
     }
 }

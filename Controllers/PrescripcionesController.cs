@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -48,14 +50,25 @@ namespace FarmaciaApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPrescripcion(int id, Prescripcion prescripcion)
+        public async Task<IActionResult> PutPrescripcion(int id, PrescripcionUpdateDTO prescripcion)
         {
-            if (id != prescripcion.IdPrescripcion)
+            var existingPrescripcion = await _context.Prescripciones.FindAsync(id);
+
+            if (existingPrescripcion == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(prescripcion).State = EntityState.Modified;
+            existingPrescripcion.Fecha = prescripcion.Fecha;
+            existingPrescripcion.Dosis = prescripcion.Dosis;
+            existingPrescripcion.Duracion = prescripcion.Duracion;
+            existingPrescripcion.Instrucciones = prescripcion.Instrucciones;
+            existingPrescripcion.Estado = prescripcion.Estado;
+            existingPrescripcion.IdExpediente = prescripcion.IdExpediente;
+            existingPrescripcion.IdUsuarioModificacion = prescripcion.IdUsuarioModificacion;
+            existingPrescripcion.FechaModificacion = prescripcion.FechaModificacion;
+
+            _context.Entry(existingPrescripcion).State = EntityState.Modified;
 
             try
             {
@@ -73,19 +86,33 @@ namespace FarmaciaApi.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(existingPrescripcion);
         }
 
         // POST: api/Prescripciones
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<Prescripcion>> PostPrescripcion(Prescripcion prescripcion)
+        public async Task<ActionResult<Prescripcion>> PostPrescripcion(PrescripcionCreateDTO prescripcion)
         {
-            _context.Prescripciones.Add(prescripcion);
+            var prescripcionObj = new Prescripcion
+            {
+                Fecha = prescripcion.Fecha,
+                Dosis = prescripcion.Dosis,
+                Duracion = prescripcion.Duracion,
+                Instrucciones = prescripcion.Instrucciones,
+                Estado = prescripcion.Estado,
+                IdExpediente = prescripcion.IdExpediente,
+                IdUsuarioCreacion = prescripcion.IdUsuarioCreacion,
+                FechaCreacion = prescripcion.FechaCreacion,
+                IdUsuarioModificacion = prescripcion.IdUsuarioModificacion,
+                FechaModificacion = prescripcion.FechaModificacion
+            };
+            
+            _context.Prescripciones.Add(prescripcionObj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPrescripcion", new { id = prescripcion.IdPrescripcion }, prescripcion);
+            return CreatedAtAction("GetPrescripcion", new { id = prescripcionObj.IdPrescripcion }, prescripcionObj);
         }
 
         // DELETE: api/Prescripciones/5
@@ -102,7 +129,7 @@ namespace FarmaciaApi.Controllers
             _context.Prescripciones.Remove(prescripcion);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool PrescripcionExists(int id)

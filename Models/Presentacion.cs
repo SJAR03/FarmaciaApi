@@ -25,14 +25,14 @@ namespace FarmaciaApi.Models
         public int IdMedidas { get; set; } // llave foranea
 
         [ForeignKey("IdMedidas")]
-        //[JsonIgnore]
+        [JsonIgnore]
         public Medidas Medidas { get; set; } // propiedad de navegacion
 
         [Required]
         public int IdDosificacion { get; set; } // llave foranea
 
         [ForeignKey("IdDosificacion")]
-        //[JsonIgnore]
+        [JsonIgnore]
         public Dosificacion Dosificacion { get; set; } // propiedad de navegacion
 
         // llave foranea para el usuario que creo el registro

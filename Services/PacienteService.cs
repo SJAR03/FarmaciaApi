@@ -1,4 +1,6 @@
-﻿using FarmaciaApi.Models;
+﻿using FarmaciaApi.DTOs.Create;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.Models;
 using FarmaciaApi.Repositories.Interfaces;
 using FarmaciaApi.Services.Interfaces;
 
@@ -18,32 +20,59 @@ namespace FarmaciaApi.Services
             return await _pacienteRepository.GetAllAsync();
         }
 
-        public async Task<Paciente> GetPacienteByIdAsync(int id)
+        public async Task<Paciente?> GetPacienteByIdAsync(int id)
         {
             return await _pacienteRepository.GetByIdAsync(id);
         }
 
-        public async Task AddPacienteAsync(Paciente paciente)
+        public async Task<Paciente> AddPacienteAsync(PacienteCreateDTO paciente)
         {
-            await _pacienteRepository.AddAsync(paciente);
+            var newPaciente = new Paciente
+            {
+                Nombres = paciente.Nombres,
+                Apellidos = paciente.Apellidos,
+                FechaNacimiento = paciente.FechaNacimiento,
+                Sexo = paciente.Sexo,
+                Direccion = paciente.Direccion,
+                Telefono = paciente.Telefono,
+                Correo = paciente.Correo,
+                Estado = paciente.Estado,
+                IdUsuarioCreacion = paciente.IdUsuarioCreacion,
+                FechaCreacion = paciente.FechaCreacion,
+                IdUsuarioModificacion = paciente.IdUsuarioModificacion,
+                FechaModificacion = paciente.FechaModificacion
+            };
+
+            return await _pacienteRepository.AddAsync(newPaciente);
         }
 
-        public async Task UpdatePacienteAsync(int id, Paciente paciente)
+        public async Task UpdatePacienteAsync(int id, PacienteUpdateDTO paciente)
         {
-            if (id == paciente.IdPaciente)
+            var existingPaciente = await _pacienteRepository.GetByIdAsync(id);
+            if (existingPaciente != null)
             {
-                await _pacienteRepository.UpdateAsync(paciente);
+                existingPaciente.Nombres = paciente.Nombres;
+                existingPaciente.Apellidos = paciente.Apellidos;
+                existingPaciente.FechaNacimiento = paciente.FechaNacimiento;
+                existingPaciente.Sexo = paciente.Sexo;
+                existingPaciente.Direccion = paciente.Direccion;
+                existingPaciente.Telefono = paciente.Telefono;
+                existingPaciente.Correo = paciente.Correo;
+                existingPaciente.Estado = paciente.Estado;
+                existingPaciente.IdUsuarioModificacion = paciente.IdUsuarioModificacion;
+                existingPaciente.FechaModificacion = paciente.FechaModificacion;
+
+                await _pacienteRepository.UpdateAsync(existingPaciente);
             }
         }
 
         public async Task DeletePacienteAsync(int id)
         {
-            await _pacienteRepository.DeleteAsync(id);
-        }
-
-        public async Task<bool> PacienteExistsAsync(int id)
-        {
-            return await _pacienteRepository.ExistsAsync(id);
+            var paciente = await _pacienteRepository.GetByIdAsync(id);
+            if (paciente != null)
+            {
+                await _pacienteRepository.DeleteAsync(paciente);
+            }
         }
     }
 }

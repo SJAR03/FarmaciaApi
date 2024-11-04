@@ -1,6 +1,7 @@
 ﻿using FarmaciaApi.Models.Security;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FarmaciaApi.Models
 {
@@ -19,6 +20,7 @@ namespace FarmaciaApi.Models
         public int IdPaciente { get; set; } // llave foranea
 
         [ForeignKey("IdPaciente")]
+        [JsonIgnore]
         public Paciente Paciente { get; set; } // propiedad de navegacion
 
         // llave foranea para el usuario que creo el registro

@@ -126,7 +126,7 @@ namespace FarmaciaApi.Controllers
             _context.LoteFarmacos.Remove(loteFarmaco);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool LoteFarmacoExists(int id)

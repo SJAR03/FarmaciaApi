@@ -23,10 +23,11 @@ namespace FarmaciaApi.Repositories
             return await _context.Pacientes.FindAsync(id);
         }
 
-        public async Task AddAsync(Paciente paciente)
+        public async Task<Paciente> AddAsync(Paciente paciente)
         {
-            await _context.Pacientes.AddAsync(paciente);
+            _context.Pacientes.Add(paciente);
             await _context.SaveChangesAsync();
+            return paciente;
         }
 
         public async Task UpdateAsync(Paciente paciente)
@@ -35,19 +36,10 @@ namespace FarmaciaApi.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Paciente paciente)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
-            if (paciente != null)
-            {
-                _context.Pacientes.Remove(paciente);
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public async Task<bool> ExistsAsync(int id)
-        {
-            return await _context.Pacientes.AnyAsync(p => p.IdPaciente == id);
+            _context.Pacientes.Remove(paciente);
+            await _context.SaveChangesAsync();
         }
     }
 }

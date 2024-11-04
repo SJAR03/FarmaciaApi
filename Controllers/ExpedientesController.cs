@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -48,14 +50,22 @@ namespace FarmaciaApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutExpediente(int id, Expediente expediente)
+        public async Task<IActionResult> PutExpediente(int id, ExpedienteUpdateDTO expediente)
         {
-            if (id != expediente.IdExpediente)
+            var existingExpediente = await _context.Expedientes.FindAsync(id);
+
+            if (existingExpediente == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(expediente).State = EntityState.Modified;
+            existingExpediente.Notas = expediente.Notas;
+            existingExpediente.Estado = expediente.Estado;
+            existingExpediente.IdPaciente = expediente.IdPaciente;
+            existingExpediente.IdUsuarioModificacion = expediente.IdUsuarioModificacion;
+            existingExpediente.FechaModificacion = expediente.FechaModificacion;
+
+            _context.Entry(existingExpediente).State = EntityState.Modified;
 
             try
             {
@@ -73,19 +83,31 @@ namespace FarmaciaApi.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(existingExpediente);
         }
 
         // POST: api/Expedientes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<Expediente>> PostExpediente(Expediente expediente)
+        public async Task<ActionResult<Expediente>> PostExpediente(ExpedienteCreateDTO expediente)
         {
-            _context.Expedientes.Add(expediente);
+
+            var expedienteObj = new Expediente
+            {
+                Notas = expediente.Notas,
+                Estado = expediente.Estado,
+                IdPaciente = expediente.IdPaciente,
+                IdUsuarioCreacion = expediente.IdUsuarioCreacion,
+                FechaCreacion = expediente.FechaCreacion,
+                IdUsuarioModificacion = expediente.IdUsuarioModificacion,
+                FechaModificacion = expediente.FechaModificacion
+            };
+
+            _context.Expedientes.Add(expedienteObj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetExpediente", new { id = expediente.IdExpediente }, expediente);
+            return CreatedAtAction("GetExpediente", new { id = expedienteObj.IdExpediente }, expedienteObj);
         }
 
         // DELETE: api/Expedientes/5
@@ -102,7 +124,7 @@ namespace FarmaciaApi.Controllers
             _context.Expedientes.Remove(expediente);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool ExpedienteExists(int id)
