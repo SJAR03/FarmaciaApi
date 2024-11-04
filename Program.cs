@@ -70,11 +70,13 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("FarmaciaConnecti
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
 builder.Services.AddScoped<IDosificacionRepository, DosificacionRepository>();
 builder.Services.AddScoped<IMedidasRepository, MedidasRepository>();
+builder.Services.AddScoped<IPresentacionRepository, PresentacionRepository>();
 
 //Services
 builder.Services.AddScoped<IPacienteService, PacienteService>();
 builder.Services.AddScoped<IDosificacionService, DosificacionService>();
 builder.Services.AddScoped<IMedidasService, MedidasService>();
+builder.Services.AddScoped<IPresentacionService, PresentacionService>();
 
 
 builder.Services.AddAuthentication(options =>

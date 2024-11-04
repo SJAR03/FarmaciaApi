@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -26,7 +28,13 @@ namespace FarmaciaApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FarmacoPresentacion>>> GetLoteFarmacoDetalles()
         {
-            return await _context.LoteFarmacoDetalles.ToListAsync();
+            return await _context.LoteFarmacoDetalles
+                .Include(x => x.LoteFarmaco)
+                .Include(x => x.Presentacion)
+                    .ThenInclude(p => p.Medidas)
+                .Include(x => x.Presentacion)
+                    .ThenInclude(p => p.Dosificacion)
+                .ToListAsync();
         }
 
         // GET: api/FarmacoPresentacions/5
@@ -48,14 +56,22 @@ namespace FarmaciaApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFarmacoPresentacion(int id, FarmacoPresentacion farmacoPresentacion)
+        public async Task<IActionResult> PutFarmacoPresentacion(int id, FarmacoPresentacionUpdateDTO farmacoPresentacion)
         {
-            if (id != farmacoPresentacion.IdLoteFarmacoDetalles)
+            var existingFarmacoPresentacion = await _context.LoteFarmacoDetalles.FindAsync(id);
+
+            if (existingFarmacoPresentacion == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(farmacoPresentacion).State = EntityState.Modified;
+            existingFarmacoPresentacion.Estado = farmacoPresentacion.Estado;
+            existingFarmacoPresentacion.IdLoteFarmaco = farmacoPresentacion.IdLoteFarmaco;
+            existingFarmacoPresentacion.IdPresentacion = farmacoPresentacion.IdPresentacion;
+            existingFarmacoPresentacion.IdUsuarioModificacion = farmacoPresentacion.IdUsuarioModificacion;
+            existingFarmacoPresentacion.FechaModificacion = farmacoPresentacion.FechaModificacion;
+
+            _context.Entry(existingFarmacoPresentacion).State = EntityState.Modified;
 
             try
             {
@@ -73,19 +89,30 @@ namespace FarmaciaApi.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(existingFarmacoPresentacion);
         }
 
         // POST: api/FarmacoPresentacions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<FarmacoPresentacion>> PostFarmacoPresentacion(FarmacoPresentacion farmacoPresentacion)
+        public async Task<ActionResult<FarmacoPresentacion>> PostFarmacoPresentacion(FarmacoPresentacionCreateDTO farmacoPresentacion)
         {
-            _context.LoteFarmacoDetalles.Add(farmacoPresentacion);
+            var farmacopresentacionObj = new FarmacoPresentacion
+            {
+                Estado = farmacoPresentacion.Estado,
+                IdLoteFarmaco = farmacoPresentacion.IdLoteFarmaco,
+                IdPresentacion = farmacoPresentacion.IdPresentacion,
+                IdUsuarioCreacion = farmacoPresentacion.IdUsuarioCreacion,
+                FechaCreacion = farmacoPresentacion.FechaCreacion,
+                IdUsuarioModificacion = farmacoPresentacion.IdUsuarioModificacion,
+                FechaModificacion = farmacoPresentacion.FechaModificacion
+            };
+
+            _context.LoteFarmacoDetalles.Add(farmacopresentacionObj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFarmacoPresentacion", new { id = farmacoPresentacion.IdLoteFarmacoDetalles }, farmacoPresentacion);
+            return CreatedAtAction("GetFarmacoPresentacion", new { id = farmacopresentacionObj.IdLoteFarmacoDetalles }, farmacopresentacionObj);
         }
 
         // DELETE: api/FarmacoPresentacions/5

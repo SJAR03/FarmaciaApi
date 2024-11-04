@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -48,14 +50,23 @@ namespace FarmaciaApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLoteFarmaco(int id, LoteFarmaco loteFarmaco)
+        public async Task<IActionResult> PutLoteFarmaco(int id, LoteFarmacoUpdateDTO loteFarmaco)
         {
-            if (id != loteFarmaco.IdLoteFarmaco)
+            var existingLotefarmaco = await _context.LoteFarmacos.FindAsync(id);
+
+            if (existingLotefarmaco == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(loteFarmaco).State = EntityState.Modified;
+            existingLotefarmaco.Nombre = loteFarmaco.Nombre;
+            existingLotefarmaco.Descripcion = loteFarmaco.Descripcion;
+            existingLotefarmaco.Cantidad = loteFarmaco.Cantidad;
+            existingLotefarmaco.Estado = loteFarmaco.Estado;
+            existingLotefarmaco.IdUsuarioModificacion = loteFarmaco.IdUsuarioModificacion;
+            existingLotefarmaco.FechaModificacion = loteFarmaco.FechaModificacion;
+
+            _context.Entry(existingLotefarmaco).State = EntityState.Modified;
 
             try
             {
@@ -73,19 +84,32 @@ namespace FarmaciaApi.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(existingLotefarmaco);
         }
 
         // POST: api/LoteFarmacos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<LoteFarmaco>> PostLoteFarmaco(LoteFarmaco loteFarmaco)
+        public async Task<ActionResult<LoteFarmaco>> PostLoteFarmaco(LoteFarmacoCreateDTO loteFarmaco)
         {
-            _context.LoteFarmacos.Add(loteFarmaco);
+
+            var lotefarmacoObj = new LoteFarmaco
+            {
+                Nombre = loteFarmaco.Nombre,
+                Descripcion = loteFarmaco.Descripcion,
+                Cantidad = loteFarmaco.Cantidad,
+                Estado = loteFarmaco.Estado,
+                IdUsuarioCreacion = loteFarmaco.IdUsuarioCreacion,
+                FechaCreacion = loteFarmaco.FechaCreacion,
+                IdUsuarioModificacion = loteFarmaco.IdUsuarioModificacion,
+                FechaModificacion = loteFarmaco.FechaModificacion
+            };
+
+            _context.LoteFarmacos.Add(lotefarmacoObj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLoteFarmaco", new { id = loteFarmaco.IdLoteFarmaco }, loteFarmaco);
+            return CreatedAtAction("GetLoteFarmaco", new { id = lotefarmacoObj.IdLoteFarmaco }, lotefarmacoObj);
         }
 
         // DELETE: api/LoteFarmacos/5

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using FarmaciaApi.Services.Interfaces;
+using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Create;
 
 namespace FarmaciaApi.Controllers
 {
@@ -14,11 +17,11 @@ namespace FarmaciaApi.Controllers
     [ApiController]
     public class PresentacionesController : ControllerBase
     {
-        private readonly FarmaciaDbContext _context;
+        private readonly IPresentacionService _service;
 
-        public PresentacionesController(FarmaciaDbContext context)
+        public PresentacionesController(IPresentacionService service)
         {
-            _context = context;
+            _service = service;
         }
 
         // GET: api/Presentaciones
@@ -26,7 +29,14 @@ namespace FarmaciaApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Presentacion>>> GetPresentaciones()
         {
-            return await _context.Presentaciones.ToListAsync();
+            var presentacion = await _service.GetPresentaciones();
+
+            if (presentacion == null || !presentacion.Any())
+            {
+                return NotFound("No existen presentaciones");
+            }
+
+            return Ok(presentacion);
         }
 
         // GET: api/Presentaciones/5
@@ -34,58 +44,39 @@ namespace FarmaciaApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
         {
-            var presentacion = await _context.Presentaciones.FindAsync(id);
+            var presentacion = await _service.GetByIdAsync(id);
 
             if (presentacion == null)
             {
-                return NotFound();
+                return NotFound("No existe la presentación con ese id");
             }
 
-            return presentacion;
+            return Ok(presentacion);
         }
 
         // PUT: api/Presentaciones/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPresentacion(int id, Presentacion presentacion)
+        public async Task<IActionResult> PutPresentacion(int id, PresentacionUpdateDTO dto)
         {
-            if (id != presentacion.IdPresentacion)
+            if (id <= 0)
             {
-                return BadRequest();
+                return BadRequest("El id de la presentación debe ser mayor a 0");
             }
 
-            _context.Entry(presentacion).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PresentacionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            await _service.UpdatePresentacion(id, dto);
+            return Ok("Presentación actualizada correctamente");
         }
 
         // POST: api/Presentaciones
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[Authorize]
         [HttpPost]
-        public async Task<ActionResult<Presentacion>> PostPresentacion(Presentacion presentacion)
+        public async Task<ActionResult<Presentacion>> PostPresentacion(PresentacionCreateDTO dto)
         {
-            _context.Presentaciones.Add(presentacion);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPresentacion", new { id = presentacion.IdPresentacion }, presentacion);
+            var createdPresentacion = await _service.CreatePresentacion(dto);
+            return CreatedAtAction(nameof(GetPresentacion), new { id = createdPresentacion.IdPresentacion }, createdPresentacion);
         }
 
         // DELETE: api/Presentaciones/5
@@ -93,21 +84,8 @@ namespace FarmaciaApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePresentacion(int id)
         {
-            var presentacion = await _context.Presentaciones.FindAsync(id);
-            if (presentacion == null)
-            {
-                return NotFound();
-            }
-
-            _context.Presentaciones.Remove(presentacion);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool PresentacionExists(int id)
-        {
-            return _context.Presentaciones.Any(e => e.IdPresentacion == id);
+            await _service.DeletePresentacion(id);
+            return Ok("Presentación eliminada correctamente");
         }
     }
 }
