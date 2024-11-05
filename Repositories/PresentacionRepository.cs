@@ -64,7 +64,12 @@ namespace FarmaciaApi.Repositories
             return presentaciones;
         }
 
-        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones()
+        public async Task<IEnumerable<Presentacion>> GetPresentaciones()
+        {
+            return await _context.Presentaciones.ToListAsync();
+        }
+
+        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentacionesView()
         {
             var presentaciones = await _context.Presentaciones
                 .Include(e => e.Medidas)

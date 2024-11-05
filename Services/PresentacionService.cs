@@ -49,7 +49,12 @@ namespace FarmaciaApi.Services
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones()
+        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentacionesView()
+        {
+            return await _repository.GetPresentacionesView();
+        }
+
+        public async Task<IEnumerable<Presentacion>> GetPresentaciones()
         {
             return await _repository.GetPresentaciones();
         }

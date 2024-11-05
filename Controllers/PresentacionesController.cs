@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using FarmaciaApi.Services.Interfaces;
 using FarmaciaApi.DTOs.Update;
 using FarmaciaApi.DTOs.Create;
+using FarmaciaApi.DTOs.Views;
 
 namespace FarmaciaApi.Controllers
 {
@@ -39,10 +40,38 @@ namespace FarmaciaApi.Controllers
             return Ok(presentacion);
         }
 
+        [HttpGet("View")]
+        public async Task<ActionResult<IEnumerable<PresentacionViewDTO>>> GetPresentacionesView()
+        {
+            var presentacion = await _service.GetPresentacionesView();
+
+            if (presentacion == null || !presentacion.Any())
+            {
+                return NotFound("No existen presentaciones");
+            }
+
+            return Ok(presentacion);
+        }
+
         // GET: api/Presentaciones/5
         //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
+        {
+            var presentacion = await _service.GetByIdAsync(id);
+
+            if (presentacion == null)
+            {
+                return NotFound("No existe la presentación con ese id");
+            }
+
+            return Ok(presentacion);
+        }
+
+        // GET: api/Presentaciones/5
+        //[Authorize]
+        [HttpGet("View/{id}")]
+        public async Task<ActionResult<PresentacionViewDTO>> GetPresentacionView(int id)
         {
             var presentacion = await _service.GetByIdViewAsync(id);
 

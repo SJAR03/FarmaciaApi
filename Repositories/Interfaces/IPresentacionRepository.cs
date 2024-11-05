@@ -5,7 +5,8 @@ namespace FarmaciaApi.Repositories.Interfaces
 {
     public interface IPresentacionRepository
     {
-        Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones();
+        Task<IEnumerable<Presentacion>> GetPresentaciones();
+        Task<IEnumerable<PresentacionViewDTO>> GetPresentacionesView();
         Task<Presentacion?> GetByIdAsync(int id);
         Task<PresentacionViewDTO?> GetByIdViewAsync(int id);
         Task<Presentacion> CreatePresentacion(Presentacion presentacion);

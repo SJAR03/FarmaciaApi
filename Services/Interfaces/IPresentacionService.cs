@@ -7,7 +7,8 @@ namespace FarmaciaApi.Services.Interfaces
 {
     public interface IPresentacionService
     {
-        Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones();
+        Task<IEnumerable<PresentacionViewDTO>> GetPresentacionesView();
+        Task<IEnumerable<Presentacion>> GetPresentaciones();
         Task<Presentacion?> GetByIdAsync(int id);
         Task<PresentacionViewDTO?> GetByIdViewAsync(int id);
         Task<Presentacion> CreatePresentacion(PresentacionCreateDTO dto);
