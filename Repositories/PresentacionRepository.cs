@@ -1,5 +1,7 @@
-﻿using FarmaciaApi.Models;
+﻿using FarmaciaApi.DTOs.Views;
+using FarmaciaApi.Models;
 using FarmaciaApi.Repositories.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace FarmaciaApi.Repositories
@@ -32,9 +34,64 @@ namespace FarmaciaApi.Repositories
             return await _context.Presentaciones.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Presentacion>> GetPresentaciones()
+        public async Task<PresentacionViewDTO?> GetByIdViewAsync(int id)
         {
-            return await _context.Presentaciones.ToListAsync();
+            var presentaciones = await _context.Presentaciones
+                .Include(e => e.Medidas)
+                .Include(e => e.Dosificacion)
+                .Where(e => e.IdPresentacion == id)
+                .Select(e => new PresentacionViewDTO
+                {
+                    IdPresentacion = e.IdPresentacion,
+                    Nombre = e.Nombre,
+                    Descripcion = e.Descripcion,
+                    Estado = e.Estado,
+                    Medidas = new MedidasViewDTO
+                    {
+                        IdMedidas = e.Medidas.IdMedidas,
+                        Nombre = e.Medidas.Nombre,
+                        Estado = e.Medidas.Estado
+                    },
+                    Dosificacion = new DosificacionViewDTO
+                    {
+                        IdDosificacion = e.Dosificacion.IdDosificacion,
+                        Nombre = e.Dosificacion.Nombre,
+                        Estado = e.Dosificacion.Estado
+                    }
+                })
+                .FirstOrDefaultAsync();
+
+            return presentaciones;
+        }
+
+        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones()
+        {
+            var presentaciones = await _context.Presentaciones
+                .Include(e => e.Medidas)
+                .Include(e => e.Dosificacion)
+                .Select(e => new PresentacionViewDTO
+                {
+                    IdPresentacion = e.IdPresentacion,
+                    Nombre = e.Nombre,
+                    Descripcion = e.Descripcion,
+                    Estado = e.Estado,
+                    Medidas = new MedidasViewDTO
+                    {
+                        IdMedidas = e.Medidas.IdMedidas,
+                        Nombre = e.Medidas.Nombre,
+                        Estado = e.Medidas.Estado
+                    },
+                    Dosificacion = new DosificacionViewDTO
+                    {
+                        IdDosificacion = e.Dosificacion.IdDosificacion,
+                        Nombre = e.Dosificacion.Nombre,
+                        Estado = e.Dosificacion.Estado
+                    }
+                })
+                .ToListAsync();
+
+            return presentaciones;
+
         }
 
         public Task UpdatePresentacion(Presentacion presentacion)

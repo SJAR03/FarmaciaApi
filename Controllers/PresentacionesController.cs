@@ -44,7 +44,7 @@ namespace FarmaciaApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Presentacion>> GetPresentacion(int id)
         {
-            var presentacion = await _service.GetByIdAsync(id);
+            var presentacion = await _service.GetByIdViewAsync(id);
 
             if (presentacion == null)
             {

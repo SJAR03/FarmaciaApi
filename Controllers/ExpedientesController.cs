@@ -9,6 +9,7 @@ using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using FarmaciaApi.DTOs.Update;
 using FarmaciaApi.DTOs.Create;
+using FarmaciaApi.DTOs.Views;
 
 namespace FarmaciaApi.Controllers
 {
@@ -26,24 +27,67 @@ namespace FarmaciaApi.Controllers
         // GET: api/Expedientes
         //[Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Expediente>>> GetExpedientes()
+        public async Task<ActionResult<IEnumerable<ExpedienteViewDTO>>> GetExpedientes()
         {
-            return await _context.Expedientes.ToListAsync();
+            var expedientes = await _context.Expedientes
+                .Include(e => e.Paciente)
+                .Select(e => new ExpedienteViewDTO
+                {
+                    IdExpediente = e.IdExpediente,
+                    Notas = e.Notas,
+                    Estado = e.Estado,
+                    Paciente = new PacienteViewDTO
+                    {
+                        IdPaciente = e.Paciente.IdPaciente,
+                        Nombres = e.Paciente.Nombres,
+                        Apellidos = e.Paciente.Apellidos,
+                        FechaNacimiento = e.Paciente.FechaNacimiento,
+                        Sexo = e.Paciente.Sexo,
+                        Direccion = e.Paciente.Direccion,
+                        Telefono = e.Paciente.Telefono,
+                        Correo = e.Paciente.Correo,
+                        Estado = e.Paciente.Estado
+                    }   
+                })
+                .ToListAsync();
+
+            return Ok(expedientes);
         }
 
         // GET: api/Expedientes/5
         //[Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Expediente>> GetExpediente(int id)
+        public async Task<ActionResult<ExpedienteViewDTO>> GetExpediente(int id)
         {
-            var expediente = await _context.Expedientes.FindAsync(id);
+            var expediente = await _context.Expedientes
+        .Include(e => e.Paciente)
+        .Where(e => e.IdExpediente == id)
+        .Select(e => new ExpedienteViewDTO
+        {
+            IdExpediente = e.IdExpediente,
+            Notas = e.Notas,
+            Estado = e.Estado,
+            Paciente = new PacienteViewDTO
+            {
+                IdPaciente = e.Paciente.IdPaciente,
+                Nombres = e.Paciente.Nombres,
+                Apellidos = e.Paciente.Apellidos,
+                FechaNacimiento = e.Paciente.FechaNacimiento,
+                Sexo = e.Paciente.Sexo,
+                Direccion = e.Paciente.Direccion,
+                Telefono = e.Paciente.Telefono,
+                Correo = e.Paciente.Correo,
+                Estado = e.Paciente.Estado
+            }
+        })
+        .FirstOrDefaultAsync();
 
             if (expediente == null)
             {
                 return NotFound();
             }
 
-            return expediente;
+            return Ok(expediente);
         }
 
         // PUT: api/Expedientes/5

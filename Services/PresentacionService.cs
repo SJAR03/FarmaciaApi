@@ -1,5 +1,6 @@
 ﻿using FarmaciaApi.DTOs.Create;
 using FarmaciaApi.DTOs.Update;
+using FarmaciaApi.DTOs.Views;
 using FarmaciaApi.Models;
 using FarmaciaApi.Repositories.Interfaces;
 using FarmaciaApi.Services.Interfaces;
@@ -48,9 +49,14 @@ namespace FarmaciaApi.Services
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<Presentacion>> GetPresentaciones()
+        public async Task<IEnumerable<PresentacionViewDTO>> GetPresentaciones()
         {
             return await _repository.GetPresentaciones();
+        }
+
+        public async Task<PresentacionViewDTO?> GetByIdViewAsync(int id)
+        {
+            return await _repository.GetByIdViewAsync(id);
         }
 
         public async Task UpdatePresentacion(int id, PresentacionUpdateDTO dto)

@@ -9,6 +9,7 @@ using FarmaciaApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using FarmaciaApi.DTOs.Update;
 using FarmaciaApi.DTOs.Create;
+using FarmaciaApi.DTOs.Views;
 
 namespace FarmaciaApi.Controllers
 {
@@ -26,9 +27,40 @@ namespace FarmaciaApi.Controllers
         // GET: api/Prescripciones
         //[Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Prescripcion>>> GetPrescripciones()
+        public async Task<ActionResult<IEnumerable<PrescripcionViewDTO>>> GetPrescripciones()
         {
-            return await _context.Prescripciones.ToListAsync();
+            var prescripcion = await _context.Prescripciones
+                .Include(e => e.Expediente)
+                .Select(e => new PrescripcionViewDTO
+                {
+                    IdPrescripcion = e.IdPrescripcion,
+                    Fecha = e.Fecha,
+                    Dosis = e.Dosis,
+                    Duracion = e.Duracion,
+                    Instrucciones = e.Instrucciones,
+                    Estado = e.Estado,
+                    Expediente = new ExpedienteViewDTO
+                    {
+                        IdExpediente = e.Expediente.IdExpediente,
+                        Notas = e.Expediente.Notas,
+                        Estado = e.Expediente.Estado,
+                        Paciente = new PacienteViewDTO
+                        {
+                            IdPaciente = e.Expediente.Paciente.IdPaciente,
+                            Nombres = e.Expediente.Paciente.Nombres,
+                            Apellidos = e.Expediente.Paciente.Apellidos,
+                            FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
+                            Sexo = e.Expediente.Paciente.Sexo,
+                            Direccion = e.Expediente.Paciente.Direccion,
+                            Telefono = e.Expediente.Paciente.Telefono,
+                            Correo = e.Expediente.Paciente.Correo,
+                            Estado = e.Expediente.Paciente.Estado
+                        }
+                    }
+                })
+                .ToListAsync();
+
+            return Ok(prescripcion);
         }
 
         // GET: api/Prescripciones/5
@@ -36,14 +68,44 @@ namespace FarmaciaApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Prescripcion>> GetPrescripcion(int id)
         {
-            var prescripcion = await _context.Prescripciones.FindAsync(id);
+            var prescripcion = await _context.Prescripciones
+                .Include(e => e.Expediente)
+                .Where(e => e.IdPrescripcion == id)
+                .Select(e => new PrescripcionViewDTO
+                {
+                    IdPrescripcion = e.IdPrescripcion,
+                    Fecha = e.Fecha,
+                    Dosis = e.Dosis,
+                    Duracion = e.Duracion,
+                    Instrucciones = e.Instrucciones,
+                    Estado = e.Estado,
+                    Expediente = new ExpedienteViewDTO
+                    {
+                        IdExpediente = e.Expediente.IdExpediente,
+                        Notas = e.Expediente.Notas,
+                        Estado = e.Expediente.Estado,
+                        Paciente = new PacienteViewDTO
+                        {
+                            IdPaciente = e.Expediente.Paciente.IdPaciente,
+                            Nombres = e.Expediente.Paciente.Nombres,
+                            Apellidos = e.Expediente.Paciente.Apellidos,
+                            FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
+                            Sexo = e.Expediente.Paciente.Sexo,
+                            Direccion = e.Expediente.Paciente.Direccion,
+                            Telefono = e.Expediente.Paciente.Telefono,
+                            Correo = e.Expediente.Paciente.Correo,
+                            Estado = e.Expediente.Paciente.Estado
+                        }
+                    }
+                })
+                .FirstOrDefaultAsync();
 
             if (prescripcion == null)
             {
                 return NotFound();
             }
 
-            return prescripcion;
+            return Ok(prescripcion);
         }
 
         // PUT: api/Prescripciones/5
@@ -108,7 +170,7 @@ namespace FarmaciaApi.Controllers
                 IdUsuarioModificacion = prescripcion.IdUsuarioModificacion,
                 FechaModificacion = prescripcion.FechaModificacion
             };
-            
+
             _context.Prescripciones.Add(prescripcionObj);
             await _context.SaveChangesAsync();
 
