@@ -29,6 +29,7 @@ namespace FarmaciaApi.Models
 
         // propiedad de navegacion para el usuario que creo el registro
         [ForeignKey("IdUsuarioCreacion")]
+        [JsonIgnore]
         public Usuario UsuarioCreacion { get; set; } // propiedad de navegacion
 
         [Required]
@@ -39,6 +40,7 @@ namespace FarmaciaApi.Models
 
         // propiedad de navegacion para el usuario que modifico el registro
         [ForeignKey("IdUsuarioModificacion")]
+        [JsonIgnore]
         public Usuario UsuarioModificacion { get; set; } // propiedad de navegacion
 
         [Required]

@@ -26,8 +26,8 @@ namespace FarmaciaApi.Controllers
 
         // GET: api/Expedientes
         //[Authorize]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ExpedienteViewDTO>>> GetExpedientes()
+        [HttpGet("ExpedienteView")]
+        public async Task<ActionResult<IEnumerable<ExpedienteViewDTO>>> GetExpedientesView()
         {
             var expedientes = await _context.Expedientes
                 .Include(e => e.Paciente)
@@ -54,10 +54,26 @@ namespace FarmaciaApi.Controllers
             return Ok(expedientes);
         }
 
+        // GET: api/Expedientes
+        //[Authorize]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Expediente>>> GetExpedientes()
+        {
+            return await _context.Expedientes.ToListAsync();
+        }
+
         // GET: api/Expedientes/5
         //[Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<ExpedienteViewDTO>> GetExpediente(int id)
+        public async Task<ActionResult<Expediente>> GetExpediente(int id)
+        {
+            return await _context.Expedientes.FindAsync(id);
+        }
+
+        // GET: api/Expedientes/5
+        //[Authorize]
+        [HttpGet("ExpedienteView/{id}")]
+        public async Task<ActionResult<ExpedienteViewDTO>> GetExpedienteView(int id)
         {
             var expediente = await _context.Expedientes
         .Include(e => e.Paciente)
