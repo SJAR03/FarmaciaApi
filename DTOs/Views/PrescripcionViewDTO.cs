@@ -2,6 +2,7 @@
 using FarmaciaApi.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace FarmaciaApi.DTOs.Views
 {
@@ -19,6 +20,16 @@ namespace FarmaciaApi.DTOs.Views
 
         public int Estado { get; set; }
 
-        public ExpedienteViewDTO Expediente { get; set; } // propiedad de navegacion
+        public int IdExpediente { get; set; }
+
+        public int IdUsuarioCreacion { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public int? IdUsuarioModificacion { get; set; }
+
+        public DateTime? FechaModificacion { get; set; }
+
+        //public ExpedienteViewDTO Expediente { get; set; } // propiedad de navegacion
     }
 }

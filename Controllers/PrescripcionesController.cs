@@ -39,24 +39,29 @@ namespace FarmaciaApi.Controllers
                     Duracion = e.Duracion,
                     Instrucciones = e.Instrucciones,
                     Estado = e.Estado,
-                    Expediente = new ExpedienteViewDTO
-                    {
-                        IdExpediente = e.Expediente.IdExpediente,
-                        Notas = e.Expediente.Notas,
-                        Estado = e.Expediente.Estado,
-                        Paciente = new PacienteViewDTO
-                        {
-                            IdPaciente = e.Expediente.Paciente.IdPaciente,
-                            Nombres = e.Expediente.Paciente.Nombres,
-                            Apellidos = e.Expediente.Paciente.Apellidos,
-                            FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
-                            Sexo = e.Expediente.Paciente.Sexo,
-                            Direccion = e.Expediente.Paciente.Direccion,
-                            Telefono = e.Expediente.Paciente.Telefono,
-                            Correo = e.Expediente.Paciente.Correo,
-                            Estado = e.Expediente.Paciente.Estado
-                        }
-                    }
+                    IdExpediente = e.IdExpediente,
+                    IdUsuarioCreacion = e.IdUsuarioCreacion,
+                    FechaCreacion = e.FechaCreacion,
+                    IdUsuarioModificacion = e.IdUsuarioModificacion,
+                    FechaModificacion = e.FechaModificacion
+                    //Expediente = new ExpedienteViewDTO
+                    //{
+                    //    IdExpediente = e.Expediente.IdExpediente,
+                    //    Notas = e.Expediente.Notas,
+                    //    Estado = e.Expediente.Estado,
+                    //    Paciente = new PacienteViewDTO
+                    //    {
+                    //        IdPaciente = e.Expediente.Paciente.IdPaciente,
+                    //        Nombres = e.Expediente.Paciente.Nombres,
+                    //        Apellidos = e.Expediente.Paciente.Apellidos,
+                    //        FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
+                    //        Sexo = e.Expediente.Paciente.Sexo,
+                    //        Direccion = e.Expediente.Paciente.Direccion,
+                    //        Telefono = e.Expediente.Paciente.Telefono,
+                    //        Correo = e.Expediente.Paciente.Correo,
+                    //        Estado = e.Expediente.Paciente.Estado
+                    //    }
+                    //}
                 })
                 .ToListAsync();
 
@@ -79,24 +84,29 @@ namespace FarmaciaApi.Controllers
                     Duracion = e.Duracion,
                     Instrucciones = e.Instrucciones,
                     Estado = e.Estado,
-                    Expediente = new ExpedienteViewDTO
-                    {
-                        IdExpediente = e.Expediente.IdExpediente,
-                        Notas = e.Expediente.Notas,
-                        Estado = e.Expediente.Estado,
-                        Paciente = new PacienteViewDTO
-                        {
-                            IdPaciente = e.Expediente.Paciente.IdPaciente,
-                            Nombres = e.Expediente.Paciente.Nombres,
-                            Apellidos = e.Expediente.Paciente.Apellidos,
-                            FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
-                            Sexo = e.Expediente.Paciente.Sexo,
-                            Direccion = e.Expediente.Paciente.Direccion,
-                            Telefono = e.Expediente.Paciente.Telefono,
-                            Correo = e.Expediente.Paciente.Correo,
-                            Estado = e.Expediente.Paciente.Estado
-                        }
-                    }
+                    IdExpediente = e.IdExpediente,
+                    IdUsuarioCreacion = e.IdUsuarioCreacion,
+                    FechaCreacion = e.FechaCreacion,
+                    IdUsuarioModificacion = e.IdUsuarioModificacion,
+                    FechaModificacion = e.FechaModificacion
+                    //Expediente = new ExpedienteViewDTO
+                    //{
+                    //    IdExpediente = e.Expediente.IdExpediente,
+                    //    Notas = e.Expediente.Notas,
+                    //    Estado = e.Expediente.Estado,
+                    //    Paciente = new PacienteViewDTO
+                    //    {
+                    //        IdPaciente = e.Expediente.Paciente.IdPaciente,
+                    //        Nombres = e.Expediente.Paciente.Nombres,
+                    //        Apellidos = e.Expediente.Paciente.Apellidos,
+                    //        FechaNacimiento = e.Expediente.Paciente.FechaNacimiento,
+                    //        Sexo = e.Expediente.Paciente.Sexo,
+                    //        Direccion = e.Expediente.Paciente.Direccion,
+                    //        Telefono = e.Expediente.Paciente.Telefono,
+                    //        Correo = e.Expediente.Paciente.Correo,
+                    //        Estado = e.Expediente.Paciente.Estado
+                    //    }
+                    //}
                 })
                 .FirstOrDefaultAsync();
 
